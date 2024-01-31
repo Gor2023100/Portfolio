@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel = "shortcut icon" href = "Images\Logo.png">
+	<title>Todo List</title>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<style>
+		h1 {			
+            color:#ffffff;
+			font-size:90px;
+			text-align:center;
+		    margin:0px;
+		    text-shadow:2px 2px 5px white;
+		}
+		.input {
+			margin-top:-50px;
+			margin-bottom:50px;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			width:100%;
+		}
+		input {
+			border:3px white solid;
+			border-radius:5px;
+			box-shadow:2px 2px 15px white;
+            height:40px;
+			width:300px;
+			font-size:38px;
+			color:#7686A6;
+			font-family:Inter;
+
+		}
+		button {
+			cursor:pointer;
+			margin-left:-50px;
+			color:white;
+			background-color:#7686A6;
+			border:3px white solid;
+			border-radius:7px;
+			font-family:Inter;
+		}
+		body {
+            font-family:"Inder";
+			background-color:#7686A6;
+		   }
+		@font-face {
+			font-family:'Inder';
+			src:url("Fonts/Inder-Regular.ttf") format("truetype");
+		}
+		.result {			
+			margin-top:100px;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+            background-color:#7686A6;
+		}
+		.res {
+			overflow-y:auto;
+			
+			width:380px;
+			height:350px;
+			max-height:350px;
+			box-shadow:2px 2px 15px white;
+			background-color:white;
+			vertical-align:center;
+			position:relative;
+		}
+		.line::before, .line2::before, .line3::before, .line4::before, .line5::before, .line6::before, .line7::before, .line8::before, .line9::before, .line10::before, .line11::before, .line12::before, .line13::before, .line14::before, .line15::before {
+			margin-top:20px;
+			content: "";
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			width:70%;
+			border-bottom:1px solid black;
+			position:absolute;
+			right:55px;
+		}
+		.line::before {
+			bottom:85%;
+		}
+		.line2::before {
+			bottom:70%;
+		}
+		.line3::before {
+			bottom:55%;
+		}
+		.line4::before {
+			bottom:40%;
+		}
+		.line5::before {
+			bottom:25%;
+		}
+		.line6::before {
+			bottom:10%;
+		}
+		.line7::before {
+			bottom:-5%;
+		}
+		.line8::before {
+			bottom:-20%;
+		}.line9::before {
+			bottom:-35%;
+		}.line10::before {
+			bottom:-50%;
+		}.line11::before {
+			bottom:-65%;
+		}.line12::before {
+			bottom:-80%;
+		}.line13::before {
+			bottom:-95%;
+		}.line14::before {
+			bottom:-110%;
+		}
+		.line15::before {
+			bottom:-125%;
+		}
+		.delete, .delete2, .delete3, .delete4, .delete5, .delete6, .delete7, .delete8, .delete9,     .delete10, .delete11, .delete12, .delete13, .delete14, .delete15 {
+			width:40px;
+			height:40px;
+		}
+		
+		.button {
+			position:absolute;
+			bottom:82%;
+			right:0px;
+			background-color:white;
+		}
+		.button2 {
+			position:absolute;
+			bottom:67%;
+			right:0px;
+			background-color:white;
+		}
+		.button3 {
+			position:absolute;
+			bottom:52%;
+			right:0px;
+			background-color:white;
+		}
+		.button4 {
+			position:absolute;
+			bottom:37%;
+			right:0px;
+			background-color:white;
+		}
+		.button5 {
+			position:absolute;
+			bottom:22%;
+			right:0px;
+			background-color:white;
+		}
+		.button6 {
+			position:absolute;
+			bottom:7%;
+			right:0px;
+			background-color:white;
+		}
+        .button7 {
+			position:absolute;
+			bottom:-8%;
+			right:0px;
+			background-color:white;
+		}
+        .button8 {
+			position:absolute;
+			bottom:-23%;
+			right:0px;
+			background-color:white;
+		}
+		.button9 {
+			position:absolute;
+			bottom:-38%;
+			right:0px;
+			background-color:white;
+		}
+		.button10 {
+			position:absolute;
+			bottom:-53%;
+			right:0px;
+			background-color:white;
+		}
+		.button11 {
+			position:absolute;
+			bottom:-68%;
+			right:0px;
+			background-color:white;
+		}
+		.button12 {
+			position:absolute;
+			bottom:-83%;
+			right:0px;
+			background-color:white;
+		}
+		.button13 {
+			position:absolute;
+			bottom:-98%;
+			right:0px;
+			background-color:white;
+		}
+		.button14 {
+			position:absolute;
+			bottom:-113%;
+			right:0px;
+			background-color:white;
+		}
+		.button15 {
+			position:absolute;
+			bottom:-128%;
+			right:0px;
+			background-color:white;
+		}
+		li {
+			display:flex;
+			margin-left:20px;
+			font-size:38px;
+			margin-top:4px;
+			color:#7686A6;
+		}
+	</style>
+</head>
+<body>
+	<h1>Todo List</h1>
+	<div id="container" class = "result">
+	</div>
+	<script type = "text/babel">
+  function EntryField({ value, setValue }) {
+  const task = (e) => {
+    if (value.length < 15) {
+      setValue([...value, e.target.task.value]);
+    } 
+    e.preventDefault();
+  }
+
+  return (
+    <div className="input" id="input">
+      <form onSubmit={task}>
+        <input type="text" name="task" />
+        <button type="submit" className="Add" disabled={value.length >= 15}>
+          Add
+        </button>
+      </form>
+    </div>
+  );
+}
+
+  function Tasks({ value, removeTask }) {
+    return (
+        <div  className = "res" id = "res">
+      	<div className = "line"></div>
+		<div className = "line2"></div>
+		<div className = "line3"></div>
+		<div className = "line4"></div>
+		<div className = "line5"></div>
+		<div className = "line6"></div>
+		<div className = "line7"></div>
+		<div className = "line8"></div>
+		<div className = "line9"></div>
+		<div className = "line10"></div>
+		<div className = "line11"></div>
+		<div className = "line12"></div>
+		<div className = "line13"></div>
+		<div className = "line14"></div>
+		<div className = "line15"></div>
+		<button className = "button" type = "submit" onClick = {() => removeTask(0)}><img className = "delete" src = "Images\Delete.png" /></button>
+		<button className = "button2" type = "submit" onClick = {() => removeTask(1)}><img className = "delete2" src = "Images\Delete.png" /></button>
+		<button className = "button3" type = "submit" onClick = {() => removeTask(2)}><img className = "delete3" src = "Images\Delete.png" /></button>
+		<button className = "button4" type = "submit" onClick = {() => removeTask(3)}><img className = "delete4" src = "Images\Delete.png" /></button>
+		<button className = "button5" type = "submit" onClick = {() => removeTask(4)}><img className = "delete5" src = "Images\Delete.png" /></button>
+		<button className = "button6" type = "submit" onClick = {() => removeTask(5)}><img className = "delete6" src = "Images\Delete.png" /></button>
+		<button className = "button7" type = "submit" onClick = {() => removeTask(6)}><img className = "delete7" src = "Images\Delete.png" /></button>
+		<button className = "button8" type = "submit" onClick = {() => removeTask(7)}><img className = "delete8" src = "Images\Delete.png" /></button>
+		<button className = "button9" type = "submit" onClick = {() => removeTask(8)}><img className = "delete9" src = "Images\Delete.png" /></button>
+		<button className = "button10" type = "submit" onClick = {() => removeTask(9)}><img className = "delete10" src = "Images\Delete.png" /></button>
+		<button className = "button11" type = "submit" onClick = {() => removeTask(10)}><img className = "delete11" src = "Images\Delete.png" /></button>
+		<button className = "button12" type = "submit" onClick = {() => removeTask(11)}><img className = "delete12" src = "Images\Delete.png" /></button>
+		<button className = "button13" type = "submit" onClick = {() => removeTask(12)}><img className = "delete13" src = "Images\Delete.png" /></button>
+		<button className = "button14" type = "submit" onClick = {() => removeTask(13)}><img className = "delete14" src = "Images\Delete.png" /></button>
+		<button className = "button15" type = "submit" onClick = {() => removeTask(14)}><img className = "delete15" src = "Images\Delete.png" /></button>
+		<ul>
+          {value.map((v, i) => <li key={i}>{v}</li>)}
+        </ul>
+      </div>
+    );
+  }
+
+  function App() {
+  const [value, setValue] = React.useState(() => {
+  const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  return savedTasks;
+});
+  const removeTask = (i) => {
+    const updatedValue = [...value];
+    updatedValue.splice(i, 1);
+    setValue(updatedValue);
+  }
+  React.useEffect(() => {
+  localStorage.setItem('tasks', JSON.stringify(value));
+}, [value]);
+  return (
+    <div>
+      <EntryField value={value} setValue={setValue} />
+      <Tasks value={value} removeTask={removeTask} />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById("container")
+);
+</script>
+</body>
+</html>

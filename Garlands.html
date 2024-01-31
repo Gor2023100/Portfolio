@@ -1,0 +1,537 @@
+<!DOCTYPE HTML>
+<html>
+<head>	
+	<link rel = "shortcut icon" href = "Images\Logo 3.png">
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<title>Christmas Garlands</title>
+	<style>
+		body {
+			background-image:url("Images/Garlands.png");
+			background-size:1400px;
+			background-repeat:no-repeat;
+			height:200px;
+			overflow:clip;
+		}
+		.Gar {
+			margin-left:-9px;
+			margin-top:-9px;
+			width:1370px;
+			height:100px;
+			background-image:url("Images/Garland.png");
+			background-size:450px;
+		}
+		h1 {
+           font-family:Yuji-Mai;
+           font-size:55px;
+           color:white;
+           position:absolute;
+           top:90px;
+           left:420px;
+		}
+		.Santa {
+			width:270px;
+			height:250px;
+			position:absolute;
+			left:530px;
+			top:250px;
+		}
+		.ChristmasTree1{			
+			width:487.1px;
+			height:546.55px;
+			background-image:url("Images/ChristmasTree.png");
+			background-size:420px;
+			background-repeat:no-repeat;
+			position:absolute;
+			top:88px;
+			left:12px;
+			z-index:1;
+		}
+		.ChristmasTree2{			
+			width:487.1px;
+			height:546.55px;
+			background-image:url("Images/ChristmasTree.png");
+			background-size:420px;
+			background-repeat:no-repeat;
+			position:absolute;
+			top:88px;
+			left:914px;
+			z-index:1;
+		}
+		.Balls {
+			width:33px;
+			height:33px;
+		}
+		.Ball1, .Ball2, .Ball3, .Ball4, .Ball5, .Ball6, .Ball7, .Ball8, .Ball9, .Ball10, .Ball11,    .Ball12, .Ball13, .Ball14, .Ball15, .Ball16, .Ball17, .Ball18, .Ball19, .Ball20, .Ball21, .Ball22, .Ball23, .Ball24, .Ball25, .Ball26, .Ball27, .Ball28, .Ball29, .Ball30, .Ball31, .Ball32 {
+			width:33px;
+			height:33px;
+			border-radius:90px;
+			z-index:2;
+		}
+		.Ball1 {
+			position:absolute;
+			left:42%;
+			top:27%;
+		}
+		.Ball2 {
+			position:absolute;
+			left:37%;
+			top:41%;
+		}
+		.Ball3 {
+			position:absolute;
+			left:54%;
+			top:48%;
+		}
+		.Ball4 {
+			position:absolute;
+			left:37%;
+			top:58%;
+		}
+		.Ball5 {
+			position:absolute;
+			left:17%;
+			top:64%;
+		}
+		.Ball6 {
+			position:absolute;
+			left:30%;
+			top:70%;	
+		}
+		.Ball7 {
+			position:absolute;
+			left:50%;
+			top:67%;
+		}
+		.Ball8 {
+			position:absolute;
+			left:64%;
+			top:62%;
+		}
+		.Ball9 {
+			position:absolute;
+			left:23%;
+			top:82%;
+		}
+		.Ball10 {
+			position:absolute;
+			left:41%;
+			top:83%;
+		}
+		.Ball11 {
+			position:absolute;
+			left:42%;
+			top:27%;
+		}
+		.Ball12 {
+			position:absolute;
+			left:37%;
+			top:41%;
+		}
+		.Ball13 {
+			position:absolute;
+			left:54%;
+			top:48%;
+		}
+		.Ball14 {
+			position:absolute;
+			left:37%;
+			top:58%;
+		}
+		.Ball15 {
+			position:absolute;
+			left:17%;
+			top:64%;
+		}
+		.Ball16 {
+			position:absolute;
+			left:30%;
+			top:70%;	
+		}
+		.Ball17 {
+			position:absolute;
+			left:50%;
+			top:67%;
+		}
+		.Ball18 {
+			position:absolute;
+			left:64%;
+			top:62%;
+		}
+		.Ball19 {
+			position:absolute;
+			left:23%;
+			top:82%;
+		}
+		.Ball20 {
+			position:absolute;
+			left:41%;
+			top:83%;
+		}
+		.Ball21 {
+			position:absolute;
+			top:4%;
+			left:2%;
+		}
+		.Ball22 {
+			position:absolute;
+			top:4.50%;
+			left:11.70%;
+		}
+		.Ball23 {
+			position:absolute;
+			top:4%;
+			left:18.70%;
+		}
+		.Ball24 {
+			position:absolute;
+			top:4.50%;
+			left:28.25%;
+		}
+		.Ball25 {
+			position:absolute;
+			top:4%;
+			left:35%;
+		}
+		.Ball26 {
+			position:absolute;
+			top:4.50%;
+			left:44.75%;
+		}
+		.Ball27 {
+			position:absolute;
+			top:4.30%;
+			left:51.55%;
+		}
+		.Ball28 {
+			position:absolute;
+			top:4.50%;
+			left:61.25%;
+		}
+		.Ball29 {
+			position:absolute;
+			top:4.30%;
+			left:68.10%;
+		}
+		.Ball30 {
+			position:absolute;
+			top:4.50%;
+			left:77.70%;
+		}
+		.Ball31 {
+			position:absolute;
+			top:4.30%;
+			left:84.60%;
+		}
+		.Ball32 {
+			position:absolute;
+			top:4.50%;
+			left:94.20%;
+		}
+		audio {
+			width:33px;
+			height:33px;
+			visibility:hidden;
+		}
+		@font-face {
+			font-family:Yuji-Mai;
+			src:url("Fonts/YujiMai-Regular.ttf") format("truetype");
+		}
+		@media (max-width:768px) {
+			.ChristmasTree1 {
+			width:487.1px;
+			height:546.55px;
+			background-image:url("Images/ChristmasTree.png");
+			background-size:420px;
+			background-repeat:no-repeat;
+			position:absolute;
+			top:160px;
+			left:-110px;
+			z-index:1;
+			transform:scale(0.5);
+		}
+		.ChristmasTree2 {
+			width:487.1px;
+			height:546.55px;
+			transform:scale(0.5);
+			background-image:url("Images/ChristmasTree.png");
+			background-size:420px;
+			background-repeat:no-repeat;
+			position:absolute;
+			top:160px;
+			left:160px;
+			z-index:1;
+		}
+			body {
+				background-image:url("Images/Garlands2.png");
+				background-size:530px;
+				}
+            .Gar {
+            transform:scale(0.4);
+			width:275%;
+			height:100px;
+			background-image:url("Images/Garland.png");
+			background-size:470px;
+			position:absolute;
+			left:-454px;
+		}
+		h1 {
+           font-family:Yuji-Mai;
+           transform:scale(0.8);
+           color:white;
+           text-align:center;
+           position:absolute;
+           top:50px;
+           left:70px;
+		}
+		.Santa {
+			width:270px;
+			height:250px;
+			transform:scale(0.7);
+			position:absolute;
+			left:130px;
+			top:150px;
+		}
+		    .Ball22 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:12.30%;
+		    }
+		    .Ball23 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:19.30%;
+		    }
+		    .Ball24 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:29.40%;
+		    }
+		    .Ball25 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:36.40%;
+		    }
+		    .Ball26 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:46.50%;
+		    }
+		    .Ball27 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:53.50%;
+		    }
+		    .Ball28 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:63.50%;
+		    }
+		    .Ball29 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:70.60%;
+		    }
+		    .Ball30 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:80.60%;
+		    }
+		    .Ball31 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:87.60%;
+		    }
+		    .Ball32 {
+		    	position:absolute;
+		    	top:31%;
+		    	left:97.60%;
+		    }
+            h1 {
+            	font-size:45px;
+            }
+		}
+		@keyframes Animation1 {
+			0% {
+				filter:brightness(1);
+			}
+			100% {
+				filter:brightness(2.5);
+			}
+		}
+		@keyframes Animation2 {
+			0% {
+				filter:brightness(2.5);
+			}
+			100% {
+				filter:brightness(1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id = "MerryChristmas">
+	</div>
+	<script type = "text/babel">    
+		function MerryChristmas() {
+		function OnMouse(n) {
+		const ball = document.getElementById("Ball" + n);		
+		const audio = document.getElementById("audio" + n);
+		audio.play();
+		ball.style.animation = "Animation1 1s ease 1 forwards";
+	}
+	function OfMouse(n) {
+	    const ball = document.getElementById("Ball" + n);
+	    ball.style.animation = "Animation2 1s ease 1 forwards";
+    }       
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const event = isMobile ? "onClick" : "onMouseOver";
+			return (
+				<div>
+				<h1>Merry Christmas</h1>
+				<img src = "Images/Logo 3.png" className = "Santa"/>
+                <div className = "ChristmasTree1">
+                <div className = "Ball1" id = "Ball1" {...{ [event]: () => OnMouse(1)}} onMouseOut = {() => OfMouse(1)}>
+		            <img className = "Balls" src = "Images\FirstChristmasTreeBall1.png" />
+		            <audio id = "audio1" src = "AudioOfProjects/Ball1.mp3"></audio>
+		        </div>
+		        <div className = "Ball2" id = "Ball2" {...{ [event]: () => OnMouse(2)}} onMouseOut = {() => OfMouse(2)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall2.png" />
+		        	<audio id = "audio2" src = "AudioOfProjects/Ball2.mp3"></audio>
+		        </div>
+		        <div className = "Ball3" id = "Ball3" {...{ [event]: () => OnMouse(3)}} onMouseOut = {() => OfMouse(3)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall3.png" />
+		        	<audio id = "audio3" src = "AudioOfProjects/Ball3.mp3"></audio>
+		        </div>
+		        <div className = "Ball4" id = "Ball4" {...{ [event]: () => OnMouse(4)}} onMouseOut = {() => OfMouse(4)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall4.png" />
+		        	<audio id = "audio4" src = "AudioOfProjects/Ball4.mp3"></audio>
+		        </div>
+		        <div className = "Ball5" id = "Ball5" {...{ [event]: () => OnMouse(5)}} onMouseOut = {() => OfMouse(5)}>
+		                <img className = "Balls" src = "Images\FirstChristmasTreeBall5.png" />
+		        		<audio id = "audio5" src = "AudioOfProjects/Ball5.mp3"></audio>
+		        </div>
+		        <div className = "Ball6" id = "Ball6" {...{ [event]: () => OnMouse(6)}} onMouseOut = {() => OfMouse(6)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall6.png" />
+		        	<audio id = "audio6" src = "AudioOfProjects/Ball6.mp3"></audio>
+		        </div>
+		        <div className = "Ball7" id = "Ball7" {...{ [event]: () => OnMouse(7)}} onMouseOut = {() => OfMouse(7)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall7.png" />
+		        	<audio id = "audio7" src = "AudioOfProjects/Ball7.mp3"></audio>
+		        </div>
+		        <div className = "Ball8" id = "Ball8" {...{ [event]: () => OnMouse(8)}} onMouseOut = {() => OfMouse(8)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall8.png" />
+		        	<audio id = "audio8" src = "AudioOfProjects/Ball8.mp3"></audio>
+		        </div>
+		        <div className = "Ball9" id = "Ball9" {...{ [event]: () => OnMouse(9)}} onMouseOut = {() => OfMouse(9)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall9.png" />
+		        	<audio id = "audio9" src = "AudioOfProjects/Ball9.mp3"></audio>
+		        </div>
+		        <div className = "Ball10" id = "Ball10" {...{ [event]: () => OnMouse(10)}} onMouseOut = {() => OfMouse(10)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall10.png" />
+		        	<audio id = "audio10" src = "AudioOfProjects/Ball10.mp3"></audio>
+		        </div>
+		    </div>
+		    <div className = "ChristmasTree2">
+		    	<div className = "Ball11" id = "Ball11" {...{ [event]: () => OnMouse(11)}} onMouseOut = {() => OfMouse(11)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall1.png" />
+		        	<audio id = "audio11" src = "AudioOfProjects/Ball11.mp3"></audio>
+		        </div>
+		        <div className = "Ball12" id = "Ball12" {...{ [event]: () => OnMouse(12)}} onMouseOut = {() => OfMouse(12)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall2.png" />
+		        	<audio id = "audio12" src = "AudioOfProjects/Ball12.mp3"></audio>
+		        </div>
+		        <div className = "Ball13" id = "Ball13" {...{ [event]: () => OnMouse(13)}} onMouseOut = {() => OfMouse(13)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall3.png" />
+		        	<audio id = "audio13" src = "AudioOfProjects/Ball13.mp3"></audio>
+		        </div>
+		        <div className = "Ball14" id = "Ball14" {...{ [event]: () => OnMouse(14)}} onMouseOut = {() => OfMouse(14)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall4.png" />
+		        	<audio id = "audio14" src = "AudioOfProjects/Ball14.mp3"></audio>
+		        </div>
+		        <div className = "Ball15" id = "Ball15" {...{ [event]: () => OnMouse(15)}} onMouseOut = {() => OfMouse(15)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall5.png" />
+		        	<audio id = "audio15" src = "AudioOfProjects/Ball15.mp3"></audio>
+		        </div>
+		        <div className = "Ball16" id = "Ball16" {...{ [event]: () => OnMouse(16)}} onMouseOut = {() => OfMouse(16)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall6.png" />
+		        	<audio id = "audio16" src = "AudioOfProjects/Ball16.mp3"></audio>
+		        </div>
+		        <div className = "Ball17" id = "Ball17" {...{ [event]: () => OnMouse(17)}} onMouseOut = {() => OfMouse(17)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall7.png" />
+		        	<audio id = "audio17" src = "AudioOfProjects/Ball17.mp3"></audio>
+		        </div>
+		        <div className = "Ball18" id = "Ball18" {...{ [event]: () => OnMouse(18)}} onMouseOut = {() => OfMouse(18)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall8.png" />
+		        	<audio id = "audio18" src = "AudioOfProjects/Ball18.mp3"></audio>
+		        </div>
+		        <div className = "Ball19" id = "Ball19" {...{ [event]: () => OnMouse(19)}} onMouseOut = {() => OfMouse(19)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall9.png" />
+		        	<audio id = "audio19" src = "AudioOfProjects/Ball19.mp3"></audio>
+		        </div>
+		        <div className = "Ball20" id = "Ball20" {...{ [event]: () => OnMouse(20)}} onMouseOut = {() => OfMouse(20)}>
+		        	<img className = "Balls" src = "Images\FirstChristmasTreeBall10.png" />
+		        	<audio id = "audio20" src = "AudioOfProjects/Ball20.mp3"></audio>
+		        </div>
+		    </div>
+		    <div className = "Gar">
+					 <div className = "Ball21" id = "Ball21" {...{ [event]: () => OnMouse(21)}} onMouseOut = {() => OfMouse(21)}>
+		        	<img src = "Images/GarlandsBallLeft.png" className = "Balls" />
+		        	<audio id = "audio21" src = "AudioOfProjects/Ball21.mp3"></audio>
+		        </div>
+				<div className = "Ball22" id = "Ball22" {...{ [event]: () => OnMouse(22)}} onMouseOut = {() => OfMouse(22)}>
+					<img src = "Images/GarlandsBallRight.png" className = "Balls" />
+					<audio id = "audio22" src = "AudioOfProjects/Ball22.mp3"></audio>
+				</div>
+				<div className = "Ball23" id = "Ball23" {...{ [event]: () => OnMouse(23)}} onMouseOut = {() => OfMouse(23)}>
+					<img src = "Images/GarlandsBallLeft.png" className = "Balls" />
+					<audio id = "audio23" src = "AudioOfProjects/Ball23.mp3"></audio>
+				</div>
+				<div className = "Ball24" id = "Ball24" {...{ [event]: () => OnMouse(24)}} onMouseOut = {() => OfMouse(24)}>
+					<img src = "Images/GarlandsBallRight.png" className = "Balls" />
+					<audio id = "audio24" src = "AudioOfProjects/Ball24.mp3"></audio>
+				</div>
+				<div className = "Ball25" id = "Ball25" {...{ [event]: () => OnMouse(25)}} onMouseOut = {() => OfMouse(25)}>
+					<img src = "Images/GarlandsBallLeft.png" className = "Balls" />
+					<audio id = "audio25" src = "AudioOfProjects/Ball25.mp3"></audio>
+				</div>
+				<div className = "Ball26" id = "Ball26" {...{ [event]: () => OnMouse(26)}} onMouseOut = {() => OfMouse(26)}>
+					<img src = "Images/GarlandsBallRight.png" className = "Balls" />
+					<audio id = "audio26" src = "AudioOfProjects/Ball26.mp3"></audio>
+				</div>
+				<div className = "Ball27" id = "Ball27" {...{ [event]: () => OnMouse(27)}} onMouseOut = {() => OfMouse(27)}>
+					<img src = "Images/GarlandsBallLeft.png" className = "Balls" />
+					<audio id = "audio27" src = "AudioOfProjects/Ball27.mp3"></audio>
+				</div>
+				<div className = "Ball28" id = "Ball28" {...{ [event]: () => OnMouse(28)}} onMouseOut = {() => OfMouse(28)}>
+					<img src = "Images/GarlandsBallRight.png" className = "Balls" />
+					<audio id = "audio28" src = "AudioOfProjects/Ball28.mp3"></audio>
+				</div>
+				<div className = "Ball29" id = "Ball29" {...{ [event]: () => OnMouse(29)}} onMouseOut = {() => OfMouse(29)}>
+					<img src = "Images/GarlandsBallLeft.png" className = "Balls" />
+					<audio id = "audio29" src = "AudioOfProjects/Ball29.mp3"></audio>
+				</div>
+				<div className = "Ball30" id = "Ball30" {...{ [event]: () => OnMouse(30)}} onMouseOut = {() => OfMouse(30)}>
+					<img src = "Images/GarlandsBallRight.png" className = "Balls" />
+					<audio id = "audio30" src = "AudioOfProjects/Ball30.mp3"></audio>
+				</div>
+				<div className = "Ball31" id = "Ball31" {...{ [event]: () => OnMouse(31)}} onMouseOut = {() => OfMouse(31)}>
+					<img src = "Images/GarlandsBallLeft.png" className = "Balls" />
+					<audio id = "audio31" src = "AudioOfProjects/Ball31.mp3"></audio>
+				</div>
+				<div className = "Ball32" id = "Ball32" {...{ [event]: () => OnMouse(32)}} onMouseOut = {() => OfMouse(32)}>
+					<img src = "Images/GarlandsBallRight.png" className = "Balls" />
+					<audio id = "audio32" src = "AudioOfProjects/Ball32.mp3"></audio>
+				</div>
+			</div>
+				</div>
+				);
+		}
+		ReactDOM.render(
+		<MerryChristmas />,
+		document.getElementById("MerryChristmas")
+		);
+	</script>
+</body>
+</html>

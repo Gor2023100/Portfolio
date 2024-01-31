@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>New Year Timer</title>
+	<link rel = "shortcut icon" href = "Images\Logo 2.png">
+	<script type = "text/javascript" src = "Library\snowstorm.js"></script>
+	<style>
+		body {
+			background-image:url("Images/Timer.png");
+			background-size:cover;
+			background-position:left;
+			background-repeat:no-repeat; 
+			height:100vh;
+		    width:100vh;
+		    }
+		.month {
+			font-size:30px;
+			font-family:Galada;
+			width:70px;
+			height:110px;
+			position:fixed;
+			right:10px;
+			bottom:0px;
+			color:#1c1c1c;
+			text-align:center;
+			background-color:#d9d9d9;
+			border-radius:25px 25px 0px 0px;
+		}
+		.week {
+			font-family:Galada;
+			background-color:#d9d9d9;
+			text-align:center;
+			color:#1c1c1c;
+			width:70px;
+			height:110px;
+			position:fixed;
+			right:95px;
+			bottom:0px;
+			font-size:30px;
+			border-radius:25px 25px 0px 0px;
+		}
+		.day {
+			border-radius:25px 25px 0px 0px;
+			font-size:30px;
+			text-align:center;
+			font-family:Galada;
+			width:70px;
+			height:110px;
+			position:fixed;
+			right:180px;
+			bottom:0px;
+			background-color:#d9d9d9;
+			color:#1c1c1c;
+		}
+		.time {
+			border-radius:25px;
+			font-size:30px;
+			text-align:center;
+			vertical-align:bottom;
+			font-family:Galada;
+			width:260px;
+			height:50px;
+			position:fixed;
+			right:30%;
+			bottom:10px;
+			background-color:#d9d9d9;
+			color:#1c1c1c;
+		}
+		.header {
+			border-radius:25px 25px 0px 0px;
+			font-size:30px;
+			text-align:center;
+			font-family:Galada;
+			width:40vh;
+			height:110px;
+			position:fixed;
+			right:10px;
+			bottom:150px;			
+			color:#d9d9d9;
+		}
+		@media (max-width:768px){
+			.time {
+				position:fixed;
+				bottom:200px;
+				right:110px;
+				font-size:40px;
+			}
+			.header {		
+			    font-size:40px;		
+				position:fixed;
+				bottom:420px;
+				right:120px;
+			}
+			.day {
+				position:fixed;
+				right:340px;
+				width:120px;
+				height:160px;
+				font-size:40px;
+
+			}
+			.week {
+                width:120px;
+				height:160px;
+				position:fixed;
+				right:180px;
+				font-size:40px;
+			}
+			.month {
+				width:120px;
+				height:160px;
+				position:fixed;
+				right:20px;
+				font-size:40px;
+			}
+		}
+		@font-face {
+			font-family:Galada;
+			src:url("Fonts/Galada-Regular.ttf") format("truetype");
+		}
+	</style>
+</head>
+<body>
+	<div class = "header">Left Until The<br />
+ Christmas Miracle</div>
+	<div id = "time" class = "time"></div>
+	<div id = "day" class = "day"></div>
+	<div id = "week" class = "week"></div>
+	<div id = "month" class = "month"></div>
+	<script>
+		function updateTimer() {
+			var currentDate = new Date();
+		    var christmasDate = new Date(currentDate.getFullYear(), 11, 25, 0, 0, 0);
+		    var timeDiff = christmasDate - currentDate;
+		    var Week = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
+		    var Month = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30));
+		    var Day = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+		    var hour = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minute = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)); 
+            var second = Math.floor((timeDiff % (1000 * 60)) / 1000); 
+            second = second < 10 ? "0" + second : second; 
+            minute = minute < 10 ? "0" + minute : minute;
+            hour = hour < 10 ? "0" + hour : hour;
+            document.getElementById("time").innerHTML = `${hour}:${minute}:${second}`;
+            document.getElementById("day").innerHTML = `${Day} <br> Day`;
+            document.getElementById("week").innerHTML = `${Week} <br> Week`;
+            document.getElementById("month").innerHTML = `${Month} <br> Mon`;            
+		}
+		updateTimer()
+		setInterval(updateTimer, 1000);
+		snowStorm.start();
+	</script>
+</body>
+</html>

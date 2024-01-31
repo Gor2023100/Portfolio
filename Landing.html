@@ -1,0 +1,2559 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel = "shortcut icon" href = "Images\Logo 4.png">
+	<title>Landing</title>
+	<script src = "https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src ="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src = "https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<style>
+		body {
+			background-image:url("Images/Landing.png");
+			font-family:"Averia Libre";
+            color:white;
+            overflow:clip;
+		}
+		.Gor {
+			transform:scale(1.4);
+			margin-top:10%;
+			margin-left:4%;
+			width:28%;
+			height:57%;
+			background-image:url("Images/Gor.png");
+			background-repeat:no-repeat;
+			z-index:2;
+			visibility:hidden;
+			animation:animation1 1500ms linear forwards;
+		}
+		h1 {		
+			opacity:0.0;
+			font-size:75px;
+			position:absolute;
+		}
+		p {
+           font-size:35px;
+           position:absolute;
+		}
+		.A, .A2, .a, .a2, .a3, .a4, .a5, .a6, .a7, .a8, .a9, .a10, .a11, .a12, .a13, .b, .C, .c, .c2, .c3, .c4, .D, .e, .e2, .e3, .e4, .e5, .e6, .e7, .e8, .e9, .e10, .F, .f, .f2, .G, .G2, .G3, .g, .H, .h, .h2, .h3, .i, .i2, .i3, .i4, .i5, .i6, .i7, .i8, .i6, .J, .k, .k2, .l, .l2, .l3, .l4, .l5, .l6, .l7, .M, .m, .n, .n2, .n3, .n4, .n5, .n6, .n7, .o, .o2, .o3, .o4, .o5, .o6, .o6, .o7, .o8, .o9, .o10, .o11, .o12, .P, .P2, .P3, .P4, .p, .p2, .p3, .p4, .R, .r, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .S, .S2, .S3, .s, .t, .t2, .t3, .t4, .t5, .t6, .t7, .t8, .u, .u2, .v, .v2, .v3, .v4, .x, .Y, .y, .y2, .y3, .plus, .zero, .zero2, .zero3, .zero4, .zero5, .zero6, .zero7, .one, .one2, .two, .two2, .two3, .two4, .three, .three2, .four, .four2, .five, .seven, .eight, .nine, .nine2, .point, .point2, .point3, .point4, .at, .Click, .Click2, .Click3, .Click4, .progressNumberHTML, .progressNumberCSS, .progressNumberJavaScript, .progressNumberReact, .progressNumberRedux, .progressNumberBootStrap, .progressNumberPHP, .progressNumberPython, .progressNumberSass, .progressNumberGit, .progressNumberGithub, .progressNumberFigma, .Thank, .you, .for, .your, .attention {
+			opacity:0.0;
+		}
+	    .a11, .a12, .a13, .b, .e10, .G3, .g, .h3, .i8, .n6, .n7, .o10, .o11, .o12, .p4, .r9, .r10, .r11, .r12, .t8, .u2, .x, .y2, .y3, .plus, .zero, .zero2, .zero3, .zero4, .zero5, .zero6, .zero7, .one, .one2, .two, .two2, .two3, .two4, .three, .three2, .four, .four2, .five, .seven, .eight, .nine, .nine2, .point, .point2, .point3, .point4, .at, .Todo, .Timer, .Garlands, .Calculator, .Tetris, .HexColor, .MyTel, .MyGithub, .MyMail, .Thank, .you, .for, .your, .attention {
+			transform:scale(1.5);
+		}
+		.a10, .C, .c4, .e9, .f2, .i7, .l7, .M, .n5, .o6, .o7, .o8, .o9, .P4, .r8, .t5, .t6, .t7 {
+			top:1%;
+		}
+		.i6, .k2, .l5, .l6, .S3, .s {
+			top:2%;
+		}
+		.A, .a, .a2, .a3, .a4, .c, .e, .e2, .f, .G2, .h, .i, .i2, .i3, .l, .n, .o2, .o3, .p, .R, .r2, .r3, .t, .v, .plus, .zero, .zero2, .one, .two, .three, .four, .four2, .seven, .eight, .nine, .nine2 {
+			top:25%;
+		}
+		.a5, .a6, .c2, .H, .h2, .i4, .J, .n2, .o4, .P, .P2, .P3, .p2, .r4, .S, .t2, .t3, .v2 , .y {
+			top:35%;
+		}
+		.G3, .o10, .r9, .zero3, .zero4, .zero5, .one2, .two2, .two3, .three2 {
+			top:40%;
+		}
+		.a7, .c3, .D, .e3, .e4, .e5, .F, .k, .l2, .l3, .l4, .o5, .p3, .r5, .S2, .t4, .u, .v3 {
+			top:45%;
+		}
+		.A2, .a8, .a11, .a12, .a13, .b, .e6, .e10, .g, .h3, .i5, .i8, .m, .n3, .n6, .n7, .o11, .o12, .p4, .r6, .r10, .r11, .r12, .t8, .u2, .x, .y2, .y3, .zero6, .zero7, .two4, .five, .point, .point2, .point3, .at {
+			top:55%;
+		}
+		.a9, .e7, .e8, .n4, .r7, .v4, .Y {
+			top:65%;
+		}
+		.A, .A2, .F, .J, .M, .Y {
+			left:57%;
+		}
+		.G3, .g, .plus {
+			left:40%;
+		}
+		.Name, .Language, .Profession, .Homeland, .City {
+			top:108.50%;
+			left:40%;
+		}
+		.Click, .Click2, .Click3, .Click4 {
+			font-size:30px;
+			color:#393d41;
+			top:86.50%;
+			left:79.50%;
+		}
+		.imageOfHTML, .HTML, .progressNumberHTML, .progressOfHTML, .containerOfHTML, .imageOfCSS, .CSS, .progressNumberCSS, .progressOfCSS, .containerOfCSS, .imageOfJavaScript, .JavaScript, .progressNumberJavaScript, .progressOfJavaScript, .containerOfJavaScript, .imageOfReact, .React, .progressNumberReact, .progressOfReact, .containerOfReact, .imageOfRedux, .Redux, .progressNumberRedux, .progressOfRedux, .containerOfRedux, .imageOfBootStrap, .BootStrap, .progressNumberBootStrap, .progressOfBootStrap, .containerOfBootStrap, .imageOfPHP, .PHP, .progressNumberPHP, .progressOfPHP, .containerOfPHP, .imageOfPython, .Python, .progressNumberPython, .progressOfPython, .containerOfPython, .imageOfSass, .Sass, .progressNumberSass, .progressOfSass, .containerOfSass, .imageOfGit, .Git, .progressNumberGit, .progressOfGit, .containerOfGit, .imageOfGithub, .Github, .progressNumberGithub, .progressOfGithub, .containerOfGithub, .imageOfFigma, .Figma, .progressNumberFigma, .progressOfFigma, .containerOfFigma {
+			position:absolute;
+		} 
+		.imageOfHTML, .imageOfCSS, .imageOfJavaScript, .imageOfReact, .imageOfRedux, .imageOfBootStrap, .imageOfPHP, .imageOfPython, .imageOfSass, .imageOfGit, .imageOfGithub, .imageOfFigma {
+			left:109%;
+		}
+		.HTML, .CSS, .JavaScript, .React, .Redux, .BootStrap, .PHP, .Python, .Sass, .Git, .Github, .Figma {
+			left:114%;
+		}
+		.progressOfHTML, .progressOfCSS, .progressOfJavaScript, .progressOfReact, .progressOfRedux, .progressOfBootStrap, .progressOfPHP, .progressOfPython, .progressOfSass, .progressOfGit, .progressOfGithub, .progressOfFigma  {
+			left:119%;
+			width:8%;
+			height:7%;
+		}
+		.containerOfHTML, .containerOfCSS, .containerOfJavaScript, .containerOfReact, .containerOfRedux, .containerOfBootStrap, .containerOfPHP, .containerOfPython, .containerOfSass, .containerOfGit, .containerOfGithub, .containerOfFigma {
+			width:0%;
+			height:3.50%;
+			border-radius:100px 0px 0px 100px;
+			z-index:1;
+		}
+		.Todo, .Timer, .Garlands, .Calculator, .Tetris, .HexColor {
+			top:-20%;
+		}
+		.MyTel, .MyGithub, .MyMail {
+			left:-20%;
+		}
+        .Thank, .you, .for, .your, .attention {
+        	font-family:"BonheurRoyale";
+        	top:77%;
+        	color:#FFFFFF;
+        }
+        .imageOfPython, .imageOfSass, .imageOfGit, .imageOfGithub, .imageOfFigma {
+        	margin-left:53%;
+        }
+        .PHP, .Python, .Sass, .Git, .Github, .Figma {
+        	margin-left:58%;
+        }
+        .HTML, .CSS, .JavaScript, .React, .Redux, .BootStrap {
+        	margin-left:5%;
+        }
+		.A {
+            animation:animation2 1s linear 5000ms forwards;
+		}
+		.A2 {
+		    animation:animation2 1s linear 5000ms forwards;
+		}
+		.a {
+			left:61.50%;
+			animation:animation2 1s linear 6500ms forwards;
+		}
+		.a2 {
+			left:69.80%;
+			animation:animation2 1s linear 9000ms forwards;
+		}
+		.a3 {
+			left:82.50%;
+			animation:animation2 1s linear 12000ms forwards;
+		}
+		.a4 {
+			left:85.20%;
+			animation:animation2 1s linear 13000ms forwards;
+		}
+		.a5 {
+			left:58.50%;
+			animation:animation2 1s linear 5500ms forwards;
+		}
+		.a6 {
+			left:61.50%;
+			animation:animation2 1s linear 6500ms forwards;
+		}
+		.a7 {
+			left:67%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.a8 {
+			left:67.50%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.a9 {
+			left:64.50%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.a10 {
+			left:44.60%;
+			animation:animation2 1s linear 3000ms forwards;
+		}
+		.a11 {
+			left:49.25%;
+			animation:animation2 1s linear 9500ms forwards;
+		}
+		.a12 {
+			left:55.15%;
+			animation:animation2 1s linear 11000ms forwards;
+		}
+		.a13 {
+			left:65.35%;
+			animation:animation2 1s linear 13500ms forwards;
+		}
+		.b {
+			left:85.70%;
+			animation:animation2 1s linear 18500ms forwards;
+		}
+		.C {
+            left:31%;
+            animation:animation2 1s linear 1000ms forwards;
+		}
+		.c {
+			left:94.25%;
+			animation:animation2 1s linear 16000ms forwards;
+		}
+		.c2 {
+			left:65%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.c3 {
+			left:69%;
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.c4 {
+			left:48%;
+			animation:animation2 1s linear 3500ms forwards;
+		}
+		.D {
+			left:74%;
+			animation:animation2 1s linear 9500ms forwards;
+		}
+		.e {
+			left:65%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.e2 {
+			left:86.80%;
+			animation:animation2 1s linear 13500ms forwards;
+		}
+		.e3 {
+			left:76.25%;
+			animation:animation2 1s linear 10000ms forwards;
+		}
+		.e4 {
+			left:80.25%;
+			animation:animation2 1s linear 11000ms forwards;
+		}
+		.e5 {
+			left:87.50%;
+			animation:animation2 1s linear 13000ms forwards;
+		}
+		.e6 {
+			left:63%;
+			animation:animation2 1s linear 6500ms forwards;
+		}
+		.e7 {
+			left:58.50%;
+			animation:animation2 1s linear 5500ms forwards;
+		}
+		.e8 {
+            left:61.25%;
+            animation:animation2 1s linear 6500ms forwards;
+		}
+		.e9 {
+			left:62%;
+			animation:animation2 1s linear 5000ms forwards;
+		}
+		.e10 {
+			left:59.35%;
+			animation:animation2 1s linear 12000ms forwards;
+		}
+		.F {
+			animation:animation2 1s linear 5000ms forwards;
+		}
+		.f {
+			left:84%;
+			animation:animation2 1s linear 12500ms forwards;
+		}
+		.f2 {
+			left:47.50%;
+			animation:animation2 1s linear 3000ms forwards;
+		}
+		.G {
+			left:46%;
+			animation:animation2 1s linear 1000ms forwards;
+		}
+		.G2 { 
+			left:74.50%;
+			animation:animation2 1s linear 10000ms forwards;
+		}
+		.G3 {
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.g {
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.H {
+            left:87.50%;
+            animation:animation2 1s linear 13500ms forwards;
+		} 
+		.h {
+			left:96%;
+			animation:animation2 1s linear 16500ms forwards;
+		}
+		.h2 {
+			left:78.50%;
+			animation:animation2 1s linear 11500ms forwards;
+		}
+		.h3 {
+			left:47%;
+			animation:animation2 1s linear 9000ms forwards;
+		}
+		.i {
+			left:59%;
+			animation:animation2 1s linear 5500ms forwards;
+		}
+		.i2 {
+			left:68.50%;
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.i3 {
+			left:93%;
+			animation:animation2 1s linear 15500ms forwards;
+		}
+		.i4 {
+			left:67.75%;
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.i5 {
+			left:66.50%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.i6 {
+			left:47%;
+			animation:animation2 1s linear 2000ms forwards;
+		}
+		.i7 {
+			left:55.50%;
+			animation:animation2 1s linear 4500ms forwards;
+		}
+		.i8 {
+			left:82.25%;
+			animation:animation2 1s linear 17500ms forwards;
+		}
+		.J {
+			animation:animation2 1s linear 5000ms forwards;
+		}
+		.k {
+			left:71%;
+			animation:animation2 1s linear 9000ms forwards;
+		}
+		.k2 {
+			left:43.50%;
+			animation:animation2 1s linear 1500ms forwards;
+		}
+		.l {
+			left:88.50%;
+			animation:animation2 1s linear 14000ms forwards;
+		}
+		.l2 {
+			left:60.50%;
+			animation:animation2 1s linear 6000ms forwards;
+		}
+		.l3 {
+			left:61.50%;
+			animation:animation2 1s linear 6500ms forwards;
+		}
+		.l4 {
+			left:82%;
+			animation:animation2 1s linear 11500ms forwards;
+		}
+		.l5 {
+			left:49%;
+			animation:animation2 1s linear 2500ms forwards;
+		}
+		.l6 {
+			left:51%;
+			animation:animation2 1s linear 3000ms forwards;
+		}
+		.l7 {
+			left:53.25%;
+			animation:animation2 1s linear 4000ms forwards;
+		}
+		.M {
+			animation:animation2 1s linear 4500ms forwards;
+		}
+		.m {
+			left:60.50%;
+			animation:animation2 1s linear 6000ms forwards;
+		}
+		.n {
+			left:71.50%;
+			animation:animation2 1s linear 9500ms forwards;
+		}
+		.n2 {
+			left:82%;
+			animation:animation2 1s linear 12500ms forwards;
+		}
+		.n3 {
+			left:64.50%;
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.n4 {
+			left:66.25%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.n5 {
+			left:38.50%;
+			animation:animation2 1s linear 2000ms forwards;
+		}
+		.n6 {
+			left:67.45%;
+			animation:animation2 1s linear 14000ms forwards;
+		}
+		.n7 {
+			left:83.50%;
+			animation:animation2 1s linear 18000ms forwards;
+		}
+		.o {
+			left:50%;
+			animation:animation2 1s linear 1500ms forwards;
+		}
+		.o2 {
+			left:76.50%;
+			animation:animation2 1s linear 10500ms forwards;
+		}
+		.o3 {
+			left:89.50%;
+			animation:animation2 1s linear 14500ms forwards;
+		}
+		.o4 {
+			left:80.25%;
+			animation:animation2 1s linear 12000ms forwards;
+		}
+		.o5 {
+			left:83.50%;
+			animation:animation2 1s linear 12000ms forwards;
+		}
+		.o6 {
+			left:38.50%;
+			animation:animation2 1s linear 1500ms forwards;
+		}
+		.o7 {
+			left:50%;
+			animation:animation2 1s linear 3500ms forwards;
+		}
+		.o8 {
+			left:57.50%;
+			animation:animation2 1s linear 5000ms forwards;
+		}
+		.o9 {
+			left:35%;
+			animation:animation2 1s linear 1500ms forwards;
+		}
+		.o10 {
+			left:42.50%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.o11 {
+			left:42%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.o12 {
+			left:87.90%;
+			animation:animation2 1s linear 19000ms forwards;
+		}
+		.P {
+            left:73.50%;
+            animation:animation2 1s linear 10000ms forwards;
+		}
+		.P2 {
+			left:85.50%;
+			animation:animation2 1s linear 13000ms forwards;
+		}
+		.P3 {
+			left:89.75%;
+			animation:animation2 1s linear 14000ms forwards;
+		}
+		.P4 {
+			left:35%;
+			animation:animation2 1s linear 1000ms forwards;
+		}
+		.p {
+			left:63%;
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.p2 {
+			left:68.75%;
+			animation:animation2 1s linear 9000ms forwards;
+		}
+		.p3 {
+			left:85.50%;
+			animation:animation2 1s linear 12500ms forwards;
+		}
+		.p4 {
+			left:57.15%;
+			animation:animation2 1s linear 11500ms forwards;
+		}
+		.R {
+			left:80.50%;
+			animation:animation2 1s linear 11500ms forwards;
+		}
+		.r {
+			left:53.50%;
+			animation:animation2 1s linear 2000ms forwards;
+		}
+		.r2 {
+			left:60%;
+			animation:animation2 1s linear 6000ms forwards;
+		}
+		.r3 {
+			left:78%;
+			animation:animation2 1s linear 11000ms forwards;
+		}
+		.r4 {
+			left:66.50%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.r5 {
+			left:89.50%;
+			animation:animation2 1s linear 13500ms forwards;
+		}
+		.r6 {
+			left:59%;
+			animation:animation2 1s linear 5500ms forwards;
+		}
+		.r7 {
+            left:60%;
+            animation:animation2 1s linear 6000ms forwards;
+		}
+		.r8 {
+			left:42%;
+			animation:animation2 1s linear 2000ms forwards;
+		}
+		.r9 {
+			left:44.50%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.r10 {
+			left:44.25%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.r11 {
+			left:53.25%;
+			animation:animation2 1s linear 10500ms forwards;
+		}
+		.r12 {
+			left:93.30%;
+			animation:animation2 1s linear 20500ms forwards;
+		}
+		.S {
+			left:63.25%;
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.S2 {
+			left:63.50%;
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.S3 {
+			left:40%;
+            animation:animation2 1s linear 1000ms forwards;
+		}
+		.s {
+			left:53%;
+			animation:animation2 1s linear 3500ms forwards;
+		}
+		.t {
+			left:67%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.t2 {
+			left:70.50%;
+			animation:animation2 1s linear 9500ms forwards;
+		}
+		.t3 {
+			left:77.25%;
+			animation:animation2 1s linear 11000ms forwards;
+		}
+		.t4 {
+			left:65.50%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.t5 {
+			left:45%;
+		    animation:animation2 1s linear 2500ms forwards;
+		}
+		.t6 {
+			left:42%;
+			animation:animation2 1s linear 2500ms forwards;
+		}
+		.t7 {
+			left:51.50%;
+			animation:animation2 1s linear 4000ms forwards;
+		}
+		.t8 {
+			left:61.35%;
+			animation:animation2 1s linear 12500ms forwards;
+		}
+		.u {
+			left:58.75%;
+			animation:animation2 1s linear 5500ms forwards;
+		}
+		.u2 {
+			left:95.30%;
+			animation:animation2 1s linear 21000ms forwards;
+		}
+		.v {
+			left:91.25%;
+			animation:animation2 1s linear 15000ms forwards;
+		}
+		.v2 {
+			left:60%;
+			animation:animation2 1s linear 6000ms forwards;
+		}
+		.v3 {
+			left:78.25%;
+			animation:animation2 1s linear 10500ms forwards;
+		}
+		.v4 {
+			left:62.75%;
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.x {
+			left:89.90%;
+			animation:animation2 1s linear 19500ms forwards;
+		}
+		.Y {
+			animation:animation2 1s linear 5000ms forwards;
+		}
+		.y {
+            left:75.50%;
+            animation:animation2 1s linear 10500ms forwards;
+		}
+		.y2 {
+			left:51.25%;
+			animation:animation2 1s linear 10000ms forwards;
+		}
+		.y3 {
+			left:63.15%;
+			animation:animation2 1s linear 13000ms forwards;
+		}
+		.plus {
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.zero {
+			left:58.25%;
+			animation:animation2 1s linear 10500ms forwards;
+		}
+		.zero2 {
+			left:60.75%;
+			animation:animation2 1s linear 11000ms forwards;
+		}
+		.zero3 {
+			left:48.50%;
+			animation:animation2 1s linear 9000ms forwards;
+		}
+		.zero4 {
+			left:56.30%;
+			animation:animation2 1s linear 11000ms forwards;
+		}
+		.zero5 {
+			left:58.50%;
+			animation:animation2 1s linear 11500ms forwards;
+		}
+		.zero6 {
+			left:73%;
+			animation:animation2 1s linear 15500ms forwards;
+		}
+		.zero7 {
+			left:75%;
+			animation:animation2 1s linear 16000ms forwards;
+		} 
+		.one {
+			left:65.25%;
+			animation:animation2 1s linear 12000ms forwards;
+		}
+		.one2 {
+			left:54.80%;
+			animation:animation2 1s linear 10500ms forwards;
+		}
+		.two {
+			left:56%;
+			animation:animation2 1s linear 10000ms forwards;
+		}
+		.two2 {
+			left:46.50%;
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.two3 {
+			left:50.70%;
+			animation:animation2 1s linear 9500ms forwards;
+		}
+		.two4 {
+			left:71%;
+			animation:animation2 1s linear 15000ms forwards;
+		}
+		.three {
+			left:42%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.three2 {
+			left:52.75%;
+			animation:animation2 1s linear 10000ms forwards;
+		}
+		.four {
+			left:46%;
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.four2 {
+			left:67%;
+			animation:animation2 1s linear 12500ms forwards;
+		}
+		.five {
+			left:77%;
+			animation:animation2 1s linear 16500ms forwards;
+		}
+		.seven {
+			left:44%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.eight {
+			left:52.25%;
+			animation:animation2 1s linear 9500ms forwards;
+		}
+		.nine {
+			left:50%;
+			animation:animation2 1s linear 9000ms forwards;
+		}
+		.nine2 {
+			left:63%;
+			animation:animation2 1s linear 11500ms forwards;
+		}
+		.point {
+			left:45.50%;
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.point2 {
+			left:69.45%;
+			animation:animation2 1s linear 14500ms forwards;
+		}
+		.point3 {
+			left:91.90%;
+			animation:animation2 1s linear 20000ms forwards;
+		}
+		.at {
+			left:79.25%;
+			animation:animation2 1s linear 17000ms forwards;
+		}
+		.Name {
+			animation:animation3 1s linear 2500ms forwards;
+		}
+		.Language {
+			animation:animation3 1s linear 3000ms forwards;
+			margin-top:7%;
+		}
+		.Profession {
+			animation:animation3 1s linear 3500ms forwards;
+			margin-top:11.50%;
+		}
+		.Homeland {
+			animation:animation3 1s linear 4000ms forwards;
+			margin-top:16.25%;
+		}
+		.City {
+			animation:animation3 1s linear 4500ms forwards;
+			margin-top:20.70%;
+		}
+		.Click {
+			animation:animation2 1s linear 17000ms forwards;
+		}
+        .Click2 {
+			top:91.50%;
+			left:88.50%;
+			animation:animation2 1s linear 14000ms forwards;
+			font-size:20px;
+		}
+		.Click3 {
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.Click4 {
+			left:71.50%;
+			animation:animation2 1s linear 24000ms forwards;
+		} 
+        .imageOfHTML { 
+			top:28%;
+			animation:animation4 1s linear 4000ms forwards;
+		} 
+		.HTML {
+            top:24%;
+            animation:animation4 1s linear 4000ms forwards;
+		}
+		.progressNumberHTML {
+			top:24%;
+			left:22%;
+			animation:animation2 1s linear 4500ms forwards;
+		}
+		.progressOfHTML {
+			top:29.50%;
+			animation:animation4 1s linear 4000ms forwards;
+			margin-left:19%;
+		}
+		.containerOfHTML {
+			top:31.25%;
+			left:28%;
+			background-color:#E44D26;
+			animation:animation5 4s linear 5000ms forwards;
+		}
+		.imageOfCSS {
+			top:40%;
+			animation:animation4 1s linear 4500ms forwards;
+		}
+		.CSS {
+			top:35%;
+			animation:animation4 1s linear 4500ms forwards;
+		}
+		.progressNumberCSS {
+			top:35%;
+			left:19.50%;
+			animation:animation2 1s linear 5000ms forwards;
+		}
+		.progressOfCSS {
+			top:40.50%;
+			animation:animation4 1s linear 4500ms forwards;
+			margin-left:17%;
+		}
+		.containerOfCSS {
+			top:42.35%;
+			left:26%;
+			height:3.40%;
+			background-color:#379AD6;
+			animation:animation6 4s linear 5500ms forwards;
+		}
+		.imageOfJavaScript {
+			top:52%;
+			animation:animation4 1s linear 5000ms forwards;
+		}
+		.JavaScript {
+			top:47%;
+			animation:animation4 1s linear 5000ms forwards;
+		}
+		.progressNumberJavaScript {
+			top:47%;
+			left:27%;
+			animation:animation2 1s linear 5500ms forwards;
+		}
+		.progressOfJavaScript {
+			top:52.50%;
+			animation:animation4 1s linear 5000ms forwards;
+			margin-left:24%;
+		}
+		.containerOfJavaScript {
+			top:54.30%;
+			left:33%;
+			height:3.43%;
+			background-color:#E4BA42;
+			animation:animation7 4s linear 6000ms forwards;
+		}
+		.imageOfReact {
+			top:64%;
+			animation:animation4 1s linear 5500ms forwards;
+		}
+		.React {
+			top:59%;
+			animation:animation4 1s linear 5500ms forwards;
+		}
+		.progressNumberReact {
+			top:59%;
+			left:21.50%;
+			animation:animation2 1s linear 6000ms forwards;
+		}
+		.progressOfReact {
+			top:64.50%;
+			animation:animation4 1s linear 5500ms forwards;
+			margin-left:19%;
+		}
+		.containerOfReact {
+			top:66.25%;
+			left:28%;
+			background-color:#61DAFB;
+			animation:animation8 4s linear 6500ms forwards;
+		}
+		.imageOfRedux {
+			top:76%;
+			animation:animation4 1s linear 6000ms forwards;
+		}
+		.Redux {
+			top:71%;
+			animation:animation4 1s linear 6000ms forwards;
+		}
+		.progressNumberRedux {
+			top:71%;
+			left:22.25%;
+			animation:animation2 1s linear 6500ms forwards;
+		}
+		.progressOfRedux {
+			top:76.50%;
+			animation:animation4 1s linear 6000ms forwards;
+			margin-left:19.50%;
+		}
+		.containerOfRedux {
+			top:78.27%;
+			left:28.50%;
+			background-color:#7549BC;
+			animation:animation9 4s linear 7000ms forwards;
+		}
+		.imageOfBootStrap {
+			top:88%;
+			animation:animation4 1s linear 6500ms forwards;
+		}
+		.BootStrap {
+			top:82%;
+			animation:animation4 1s linear 6500ms forwards;
+		}
+		.progressNumberBootStrap {
+			top:82%;
+			left:26.50%;
+			animation:animation2 1s linear 7000ms forwards;
+		}
+		.progressOfBootStrap {
+			top:87.50%;
+			animation:animation4 1s linear 6500ms forwards;
+			margin-left:23.50%;
+		}
+		.containerOfBootStrap {
+			top:89.30%;
+			left:32.50%;
+			background-color:#8812FC;
+			animation:animation10 4s linear 7500ms forwards;
+		}
+		.imageOfPHP {
+            top:28%;
+            animation:animation4 1s linear 7000ms forwards;
+            margin-left:51%;
+		}
+		.PHP {
+			top:23%;
+			animation:animation4 1s linear 7000ms forwards;
+		}
+		.progressNumberPHP {
+			top:23%;
+			left:73%;
+			animation:animation2 1s linear 7500ms forwards;
+		}
+		.progressOfPHP {
+			top:28.50%;
+			animation:animation4 1s linear 7000ms forwards;
+			margin-left:70.45%;
+		}
+		.containerOfPHP {
+			top:30.25%;
+			left:79.50%;
+			background-color:#777BB3;
+			animation:animation11 4s linear 8000ms forwards;
+		}
+		.imageOfPython {
+			top:40%;
+			animation:animation4 1s linear 7500ms forwards;
+		}
+		.Python {
+			top:35%;
+			animation:animation4 1s linear 7500ms forwards;
+		}
+		.progressNumberPython {
+			top:35%;
+			left:76.50%;
+			animation:animation2 1s linear 8000ms forwards;
+		}
+		.progressOfPython {
+			top:40.50%;
+            animation:animation4 1s linear 7500ms forwards;
+            margin-left:74%;
+		}
+		.containerOfPython {
+			top:42.25%;
+			left:83%;
+			background-color:#3874A5;
+			animation:animation12 4s linear 8500ms forwards;
+		}
+		.imageOfSass {
+			top:52%;
+			animation:animation4 1s linear 8000ms forwards;
+		}
+		.Sass {
+			top:47.50%;
+			animation:animation4 1s linear 8000ms forwards;
+		}
+		.progressNumberSass {
+			top:47.50%;
+			left:73.50%;
+			animation:animation2 1s linear 8500ms forwards;
+		}
+		.progressOfSass {
+			top:53%;
+			animation:animation4 1s linear 8000ms forwards;
+			margin-left:71.50%;
+		}
+		.containerOfSass {
+			top:54.72%;
+			left:80.50%;
+			background-color:#CD669A;
+			animation:animation13 4s linear 9000ms forwards;
+		}
+		.imageOfGit {
+			top:64%;
+			animation:animation4 1s linear 8500ms forwards;
+		}
+		.Git {
+			top:59%;
+			animation:animation4 1s linear 8500ms forwards;
+		}
+		.progressNumberGit {
+			top:59%;
+			left:71.50%;
+			animation:animation2 1s linear 9000ms forwards;
+		}
+		.progressOfGit {
+			top:64.75%;
+			animation:animation4 1s linear 8500ms forwards;
+			margin-left:69.50%;
+		}
+		.containerOfGit {
+			top:66.50%;
+			left:78.50%;
+			background-color:#F05033;
+			animation:animation11 4s linear 9500ms forwards;
+		}
+		.imageOfGithub {
+			top:76%;
+			animation:animation4 1s linear 9000ms forwards;
+		}
+		.Github {
+			top:71.50%;
+			animation:animation4 1s linear 9000ms forwards;
+		}
+		.progressNumberGithub {
+			top:71.50%;
+			left:76%;
+			animation:animation2 1s linear 9500ms forwards;
+		}
+		.progressOfGithub {
+			top:77%;
+			animation:animation4 1s linear 9000ms forwards;
+			margin-left:73.80%;
+		}
+		.containerOfGithub {
+			top:78.75%;
+			left:82.80%;
+			background-color:#000000;
+			animation:animation14 4s linear 10000ms forwards;
+		}
+		.imageOfFigma {
+			top:88%;
+			animation:animation4 1s linear 9500ms forwards;
+		}
+		.Figma {
+			top:83%;
+			animation:animation4 1s linear 9500ms forwards;
+		}
+		.progressNumberFigma {
+			top:83%;
+			left:75%;
+			animation:animation2 1s linear 10000ms forwards;
+		}
+		.progressOfFigma {
+			top:88.50%;
+			animation:animation4 1s linear 9500ms forwards;
+			margin-left:72.90%;
+		}
+		.containerOfFigma {
+			top:90.28%;
+			left:81.88%;
+			background-color:#323232;
+			animation:animation15 4s linear 10500ms forwards;
+		}
+        a {
+        	color:white;
+        }
+        .Todo {
+        	left:24%;
+        	animation:animation16 1s linear 8000ms forwards;
+        	margin-top:-16.50%;
+        }
+        .Timer {
+        	left:24%;
+        	animation:animation16 1s linear 7000ms forwards;
+        	margin-top:-6.50%;
+        }
+        .Garlands {
+        	left:25%;
+        	animation:animation16 1s linear 6000ms forwards;
+        }
+        .Calculator {
+        	left:63%;
+        	animation:animation16 1s linear 7500ms forwards;
+        	margin-top:-16.50%;
+        }
+        .Tetris {
+        	left:62%;
+        	animation:animation16 1s linear 6500ms forwards;
+        	margin-top:-6.50%;
+        }
+		.HexColor {
+			left:63%;
+			animation:animation16 1s linear 5500ms forwards;
+		}
+        .MyTel {
+        	top:25%;
+        	animation:animation17 1s linear 5500ms forwards;
+        }
+        .MyGithub {
+        	top:40%;
+        	animation:animation17 1s linear 6000ms forwards;
+        	margin-left:1%;
+        }
+        .MyMail {
+        	top:55%;
+        	animation:animation17 1s linear 6500ms forwards;
+        }
+        .Thank {
+        	left:8%;
+        	animation:animation2 1s linear 21500ms forwards;
+        }
+        .you {
+        	left:28%;
+        	animation:animation2 1s linear 22000ms forwards;
+        }
+        .for {
+        	left:48%;
+        	animation:animation2 1s linear 22500ms forwards;
+        } 
+        .your {
+        	left:68%;
+        	animation:animation2 1s linear 23000ms forwards;
+        }
+        .attention {
+        	left:88%;
+        	animation:animation2 1s linear 23500ms forwards;
+        }
+        @font-face {
+        	font-family:"BonheurRoyale";
+        	src:url("Fonts/BonheurRoyale-Regular.ttf") ;
+        }
+		@font-face {
+			font-family:"Averia Libre";
+			src:url("Fonts/AveriaLibre-Regular.ttf");
+		}
+		@media (max-width:768px) {
+			.Gor {
+			    transform:scale(1.2);
+			    margin-top:10%;
+			    margin-left:16%;
+			    width:34%;
+		    }
+		    .a10, .C, .c4, .e9, .f2, .i7, .l7, .M, .n5, .o6, .o7, .o8, .o9, .P4, .r8, .t5, .t6, .t7 {
+			    top:-5%;
+			}
+			.G, .i6, .k2, .l5, .l6, .o, .r, .S3, .s {
+				top:-6%;
+			}
+			.plus, .zero, .zero2, .one, .two, .three, .four, .four2, .seven, .eight, .nine, .nine2 {
+				top:20%;
+			} 
+			.G3, .o10, .r9, .zero3, .zero4, .zero5, .one2, .two2, .two3, .three2 {
+				top:30%;
+			}
+			.a11, .a12, .a13, .b, .e10, .g, .h3, .i8, .n6, .n7, .o11, .o12, .p4, .r10, .r11, .r12, .t8, .u2, .x, .y2, .y3, .zero6, .zero7, .two4, .five, .point, .point2, .point3, .at {
+			    top:40%;
+			}
+		    .A, .a, .a2, .a3, .a4, .c, .e, .e2, .f, .G2, .h, .i, .i2, .i3, .l, .n, .o2, .o3, .c, .e, .e2, .f, .G2, .h, .i, .i2, .i3, .l, .n, .o2, .o3, .p, .R, .r2, .r3, .t, .v {
+		    	top:55%;
+		    }
+		    .a5, .a6, .c2, .H, .h2, .i4, .J, .n2, .o4, .P, .P2, .P3, .p2, .r4, .S, .t2, .t3, .v2, .y {
+		    	top:62%;
+		    }
+		    .a7, .c3, .D, .e3, .e4, .e5, .F, .k, .l2, .l3, .l4, .o5, .p3, .r5, .S2, .t4, .u, .v3 {
+		    	top:69%;
+		    }
+		    .A2, .a8, .e6, .i5, .m, .n3, .r6 {
+		    	top:76%;
+		    }
+		    .a9, .e7, .e8, .n4, .r7, .v4, .Y {
+			    top:83%;
+			}
+			.Click, .Click2, .Click3, .Click4 {
+				top:88.50%;
+			}
+			.Name, .Profession, .Homeland, .City {
+				top:108.50%;
+			}
+			.Language, .Profession, .Homeland {
+				left:-3%;
+			}
+			.A, .A2, .F, .J, .Y {
+				left:35%;
+			}
+			.G3, .g, .plus {
+			    left:44%;
+		    }
+		    .a11, .a12, .a13, .b, .e10, .g, .h3, .i8, .n6, .n7, .o11, .o12, .p4, .r10, .r11, .r12, .t8, .u2, .x, .y2, .y3, .zero6, .zero7, .two4, .five, .point, .point2, .point3, .at {
+		    	transform:scale(0.5);
+		    }
+		    .imageOfHTML, .HTML, .progressNumberHTML,  .progressOfHTML, .containerOfHTML, .imageOfCSS, .CSS, .progressNumberCSS,  .progressOfCSS, .containerOfCSS, .imageOfJavaScript, .JavaScript, .progressNumberJavaScript,  .progressOfJavaScript, .containerOfJavaScript, .imageOfReact,  .React, .progressNumberReact,  .progressOfReact, .containerOfReact, .imageOfRedux, .Redux, .progressNumberRedux,  .progressOfRedux, .containerOfRedux, .imageOfBootStrap, .BootStrap, .progressNumberBootStrap,  .progressOfBootStrap, .containerOfBootStrap, .imageOfPHP, .PHP, .progressNumberPHP,  .progressOfPHP, .containerOfPHP, .imageOfPython, .Python, .progressNumberPython,  .progressOfPython, .containerOfPython, .imageOfSass, .Sass, .progressNumberSass,  .progressOfSass, .containerOfSass, .imageOfGit, .Git, .progressNumberGit,  .progressOfGit, .containerOfGit, .imageOfGithub, .Github, .progressNumberGithub,  .progressOfGithub, .containerOfGithub, .imageOfFigma, .Figma, .progressNumberFigma,  .progressOfFigma, .containerOfFigma  {
+            	transform:scale(0.6);
+            } 
+		    .A, .A2, .a, .a2, .a3, .a4, .a5, .a6, .a7, .a8, .a9, .c, .c2, .c3, .D, .e, .e2, .e3, .e4, .e5, .e6, .e7, .e7, .e8, .F, .f, .G2, .G3, .H, .h, .h2, .i, .i2, .i3, .i4, .i5, .J, .k, .l, .l2, .l3, .l4, .m, .n, .n2, .n3, .n4, .o2, .o3, .o4, .o5, .o10, .P, .P2, .P3, .p, .p2, .p3, .R, .r2, .r3, .r4, .r5, .r6, .r7, .r9, .S, .S2, .t, .t2, .t3, .t4, .u, .v, .v2, .v3, .v4, .Y, .y, .plus, .zero, .zero2, .zero3, .zero4, .zero5, .one, .one2, .two, .two2, .two3, .three, .three2, .four, .four2, .seven, .eight, .nine, .nine2, .Click, .Name, .Language, .Profession, .Homeland, .City {
+		    	transform:scale(0.7);
+		    }
+		    .Click2, .Click3, .Click4 {
+		    	transform:scale(0.8);
+		    }
+		    .MyTel, .MyGithub, .MyMail, .Thank, .you, .for, .your, .attention {
+		    	transform:scale(1);
+		    }
+		    .a10, .C, .c4, .e9, .M, .n5, .o9, .t6, .t7 {
+		    	transform:scale(1.1);
+		    }
+		    .f2, .G, .i6, .i7, .k2, .l5, .l6, .l7, .o, .o6, .o7, .o8, .P4, .r, .r8, .S3, .s, .t5, .Todo, .Timer, .Garlands, .Calculator, .Tetris, .HexColor  {
+		    	transform:scale(1.3);
+		    } 
+		    .PHP, .Python, .Sass, .Git, .Github, .Figma {
+		    	left:114%;
+		    }
+		    .imageOfPHP,  .imageOfPython,  .imageOfSass,  .imageOfGit,  .imageOfGithub,  .imageOfFigma {
+		        left:149%;
+		    }
+            .progressOfHTML, .progressOfCSS,  .progressOfJavaScript,  .progressOfReact,  .progressOfRedux,  .progressOfBootStrap,  .progressOfPHP,  .progressOfPython,  .progressOfSass,  .progressOfGit,  .progressOfGithub,  .progressOfFigma {
+             	width:17%;
+			    height:7%;
+            }
+            .containerOfHTML, .containerOfCSS, .containerOfJavaScript, .containerOfReact, .containerOfRedux, .containerOfBootStrap, .containerOfPHP, .containerOfPython, .containerOfSass, .containerOfGit, .containerOfGithub, .containerOfFigma {
+            	height:3.50%;
+            }
+		    .a {
+                left:42.25%;
+		    }
+		    .a2 {
+                left:54%;
+		    }
+		    .a3 {
+                left:76.45%;
+		    }
+		    .a4 {
+                left:81%;
+		    }
+		    .a5 {
+                left:37%;
+		    }
+		    .a6 {
+                left:42.30%;
+		    }
+		    .a7 {
+                left:52.75%;
+		    }
+		    .a8 {
+                left:55%;
+		    }
+		    .a9 {
+			    left:48.25%;
+		    }
+		    .a10 {
+                left:41.50%;
+		    }
+		    .a11 {
+                left:52%;
+		    }
+		    .a12 {
+                left:58%;
+		    }
+		    .a13 {
+                left:67%;
+		    }
+		    .b {
+                left:88%;
+		    }
+		    .C {
+                left:4%;
+		    }
+		    .c {
+                left:95%;
+		    }
+		    .c2 {
+                left:48.30%;
+		    }
+		    .c3 {
+                left:55.50%;
+		    }
+		    .c4 {
+                left:51.50%;
+		    }
+		    .D {
+                left:63.50%;
+		    }
+		    .e {
+                left:47.75%;
+		    }
+		    .e2 {
+                left:83.50%;
+		    }
+		    .e3 {
+                left:67.25%;
+		    }
+		    .e4 {
+                left:72.50%;
+		    }
+		    .e5 {
+                left:83%;
+		    }
+		    .e6 {
+                left:46%;
+		    }
+		    .e7 {
+			    left:38%;
+		    }
+		    .e8 {
+			    left:42.50%;
+		    }
+		    .e9 {
+                left:88.50%;
+		    }
+		    .e10 {
+                left:62%;
+		    }
+		    .f {
+                left:79.25%;
+		    }
+		    .f2 {
+                left:53%;
+		    }
+		    .G  {
+				left:34%;
+			}
+		    .G2 { 
+                left:62%;
+		    }
+		    .H  {
+                left:86.50%;
+		    } 
+		    .h {
+                left:97%;
+		    }
+		    .h2 {
+                left:70.70%;
+		    }
+		    .h3 {
+                left:50%;
+            }
+		    .i {
+                left:38.50%;
+		    }
+		    .i2 {
+                left:52.50%;
+		    }
+		    .i3 {
+                left:93.50%;
+		    }
+		    .i4 {
+                left:53%;
+		    }
+		    .i5 {
+                left:53%;
+		    }
+		    .i6 {
+				left:48%;
+		    }
+		    .i7 {
+                left:80%;
+		    }
+		    .i8 {
+                left:84.50%;
+		    }
+		    .k {
+                left:58.25%;
+		    }
+		    .k2 {
+				left:37%;
+		    }
+		    .l {
+                left:86.25%;
+		    }
+		    .l2 {
+                left:41.50%;
+		    }
+		    .l3 {
+                left:43.50%;
+		    }
+		    .l4 {
+                left:75.50%;
+		    }
+		    .l5 {
+				left:55%;
+		    }
+		    .l6 {
+				left:62%;
+		    }
+		    .l7 {
+                left:73%;
+		    }
+		    .M {
+                left:74.50%;
+		    }
+		    .m {
+                left:41%;
+		    }
+		    .n {
+                left:56.50%;
+		    }
+		    .n2 {
+                left:76.50%;
+		    }
+		    .n3 {
+                left:49%;
+		    }
+		    .n4 {
+			    left:50.75%;
+		    }
+		    .n5 {
+                left:25%;
+		    }
+		    .n6 {
+		    	left:69%;
+		    }
+		    .n7 {
+                left:85.50%;
+		    }
+			.o {
+				left:49%;
+			}
+		    .o2 {
+                left:65.50%;
+		    }
+		    .o3 {
+                left:87.50%;
+		    }
+		    .o4 {
+                left:73.70%;
+		    }
+		    .o5 {
+                left:77%;
+		    }
+		    .o6 {
+                left:21%;
+		    }
+		    .o7 {
+                left:62%;
+		    }
+		    .o8 {
+                left:87%;
+		    }
+		    .o9 {
+                left:15%;
+		    }
+		    .o10 {
+                left:48%;
+		    }
+		    .o11 {
+                left:46%;
+		    }
+		    .o12 {
+                left:90%;
+		    }
+		    .P {
+                left:62.50%;
+		    }
+		    .P2 {
+                left:83.50%;
+		    }
+		    .P3 {
+                left:90.25%;
+		    }
+		    .P4 {
+                left:9%;
+		    }
+		    .p {
+                left:44.70%;
+            }
+		    .p2 {
+                left:54%;
+		    }
+		    .p3 {
+                left:79.75%;
+		    }
+		    .p4 {
+                left:60%;
+		    }
+		    .R {
+                left:73%;
+		    }
+			.r {
+				left:61%;
+			}
+		    .r2 {
+                left:40%;
+		    }
+		    .r3 {
+                left:68.50%;
+		    }
+		    .r4 {
+                left:50.80%;
+		    }
+		    .r5 {
+                left:86%;
+		    }
+		    .r6 {
+                left:39%;
+		    }
+		    .r7 {
+			    left:40.50%;
+		    }
+		    .r8 {
+                left:33%;
+		    }
+		    .r9 {
+                left:51%;
+		    }
+		    .r10 {
+                left:48%;
+		    }
+		    .r11 {
+                left:56.50%;
+		    }
+		    .r12 {
+                left:95.50%;
+		    }
+		    .S {
+                left:45.30%;
+		    }
+		    .S2 {
+                left:47.50%;
+		    }
+		    .S3 {
+				left:25%;
+		    }
+		    .s {
+				left:69%;
+		    }
+		    .t {
+                left:50.50%;
+		    }
+		    .t2 {
+                left:56.50%;
+		    }
+		    .t3 {
+                left:68.70%;
+		    }
+		    .t4 {
+                left:50.75%;
+		    }
+		    .t5 {
+                left:43%;
+		    }
+		    .t6 {
+                left:34%;
+		    }
+		    .t7 {
+                left:59.50%;
+		    }
+		    .t8 {
+                left:64%;
+		    }
+		    .u {
+                left:38%;
+		    }
+		    .u2 {
+                left:97%;
+		    }
+		    .v  {
+                left:90.35%;
+		    }
+		    .v2 {
+                left:39.50%;
+		    }
+		    .v3 {
+                left:70%;
+		    }
+		    .v4 {
+			    left:45.25%;
+		    }
+		    .x  {
+                left:92%;
+		    }
+		    .y  {
+                left:65.70%;
+		    }
+		    .y2 {
+                left:54%;
+		    }
+		    .y3 {
+                left:65%;
+		    }
+		   .zero {
+                left:69%;
+		    }
+		    .zero2 {
+                left:72%;
+		    }
+		    .zero3 {
+                left:56%;
+		    }
+		    .zero4 {
+                left:67%;
+		    }
+		    .zero5 {
+                left:70%;
+		    }
+		    .zero6 {
+                left:74%;
+		    }
+		    .zero7 {
+                left:76%;
+		    }
+		    .one {
+                left:78%;
+		    }
+		    .one2 {
+                left:65%;
+		    }
+		    .two {
+                left:66%;
+		    }
+		    .two2 {
+                left:53%;
+		    }
+		    .two3 {
+                left:59%;
+		    }
+		    .two4 {
+                left:72%;
+		    }
+		    .three {
+                left:47%;
+		    }
+		    .three2 {
+                left:62%;
+		    }
+		    .four {
+                left:53%;
+		    }
+		    .four2 {
+                left:80%;
+		    }
+		    .five {
+                left:78%;
+		    }
+		    .seven {
+                left:50%;
+		    }
+		    .eight {
+                left:61%;
+		    }
+		    .nine {
+                left:58%;
+		    }
+		    .nine2 {
+                left:75%;
+		    }
+		    .point {
+                left:49.50%;
+		    }
+		    .point2 {
+                left:71.50%;
+		    }
+		    .point3 {
+                left:94.50%;
+		    }
+		    .at {
+                left:80%;
+		    }
+		    .Click {
+			    left:54.75%;
+		    }
+            .Click2 {
+			    left:82.75%;
+		    }
+		    .Click3 {
+			    left:52.75%;
+		    }
+		    .Click4 {
+			    left:10.75%;
+		    } 
+			.Name {
+				margin-top:41.90%;
+				margin-left:-40%;
+		    }
+		    .Language {
+		    	margin-top:50%;
+		    	margin-left:1%;
+		    }
+		    .Profession {
+		    	margin-top:58.10%;
+		    	margin-left:0.50%;
+		    }
+		    .Homeland {
+		    	margin-top:66.20%;
+		    	margin-left:1%;
+		    }
+		    .City {
+			    margin-top:75.40%;
+			    margin-left:-39%;
+		    }
+		    .imageOfHTML {
+		    	margin-left:12.50%;
+			    margin-top:-11%;
+		    } 
+		    .HTML {
+			    margin-top:-5%;
+			    margin-left:19.50%;
+		    }
+		    .progressNumberHTML {
+			    margin-top:-5%;
+			    margin-left:22%;
+		    }
+		    .progressOfHTML {
+			    margin-top:-11%;
+			    margin-left:45%;
+		    }
+		    .containerOfHTML {
+		    	margin-top:-11%;
+			    margin-left:26%;
+			    animation:animation19 1000ms linear 5000ms forwards;
+		    }
+		    .imageOfCSS {
+		    	margin-left:12.50%;
+			    margin-top:-18%;
+		    } 
+		    .CSS {
+			    margin-top:-11%;
+			    margin-left:21%;
+		    }
+		    .progressNumberCSS {
+			    margin-top:-11%;
+			    margin-left:20%;
+		    }
+		    .progressOfCSS {
+			    margin-top:-17%;
+			    margin-left:41%;
+		    }
+		    .containerOfCSS {
+		    	margin-top:-17.25%;
+			    margin-left:24%;
+			    animation:animation20 1000ms linear 5500ms forwards;
+		    }
+		    .imageOfJavaScript {
+		    	margin-left:12.50%;
+			    margin-top:-25%;
+		    }
+		    .JavaScript {
+			    margin-top:-18%;
+			    margin-left:17%;
+		    }
+		    .progressNumberJavaScript {
+			    margin-top:-18%;
+			    margin-left:24%;
+		    }
+		    .progressOfJavaScript {
+			    margin-top:-24%;
+			    margin-left:52%;
+		    }
+		    .containerOfJavaScript {
+			    margin-top:-24%;
+			    margin-left:28%;
+			    animation:animation21 1000ms linear 6000ms forwards;
+		    }
+		    .imageOfReact {
+		    	margin-left:12.50%;
+			    margin-top:-32%;
+		    }
+		    .React {
+			    margin-top:-25%;
+			    margin-left:20%;
+		    }
+		    .progressNumberReact {
+			    margin-top:-25%;
+			    margin-left:21%;
+		    }
+		    .progressOfReact {
+			    margin-top:-31.50%;
+			    margin-left:44%;
+		    }
+		    .containerOfReact {
+			    margin-top:-31.60%;
+			    margin-left:25%;
+			    animation:animation22 1000ms linear 6500ms forwards;
+		    }
+		    .imageOfRedux {
+		    	margin-left:12.50%;
+			    margin-top:-39%;
+		    }
+		    .Redux {
+			    margin-top:-32%;
+			    margin-left:19.60%;
+		    }
+		    .progressNumberRedux {
+			    margin-top:-32%;
+			    margin-left:21%;
+		    }
+		    .progressOfRedux {
+			    margin-top:-38.50%;
+			    margin-left:44.50%;
+		    }
+		    .containerOfRedux {
+			    margin-top:-38.45%;
+			    margin-left:25%;
+			    animation:animation23 1000ms linear 7000ms forwards;
+		    }
+		    .imageOfBootStrap {
+		    	margin-top:-45%;
+		    	margin-left:12.50%;
+		    }
+		    .BootStrap {
+			    margin-top:-38.25%;
+			    margin-left:17.25%;
+		    }
+		    .progressNumberBootStrap {
+			    margin-top:-38.25%;
+			    margin-left:24%;
+		    }
+		    .progressOfBootStrap {
+			    margin-top:-44.75%;
+			    margin-left:51.50%;
+		    }
+		    .containerOfBootStrap {
+		 	    margin-top:-44.85%;
+			    margin-left:28%;
+			    animation:animation24 1000ms linear 7500ms forwards;
+		    }
+		    .imageOfPHP {
+		 	    margin-top:31%;
+		 	    margin-left:7.50%;
+		    }
+		    .PHP {
+			    top:49.25%;
+			    margin-left:21%;
+		    }
+		    .progressNumberPHP {
+			    top:49.50%;
+			    left:40%;
+		    }
+		    .progressOfPHP {
+			    top:55.50%;
+			    margin-left:42%;
+		    }
+		    .containerOfPHP {
+			    top:57.25%;
+			    margin-left:-28.50%;
+			    animation:animation25 1000ms linear 8000ms forwards;
+		    }
+		    .imageOfPython {
+			    margin-top:25%;
+			    margin-left:13%;
+		    }
+		    .Python {
+			    top:56%;
+			    margin-left:19.30%;
+		    }
+		    .progressNumberPython {
+			    top:56%;
+			    left:45.50%;
+		    }
+		    .progressOfPython {
+		    	top:62%;
+		    	margin-left:47.50%;
+		    }
+		    .containerOfPython {
+			    top:63.65%;
+			    margin-left:-27%;
+			    animation:animation26 1000ms linear 8500ms forwards;
+		    }
+	        .imageOfSass {
+			    margin-top:19%;
+			    margin-left:13%;
+		    }
+		    .Sass {
+			    top:62.75%;
+			    margin-left:21%;
+		    }
+		    .progressNumberSass {
+			    top:62.75%;
+			    left:41%;
+		    }
+		    .progressOfSass {
+		    	top:69%;
+			    margin-left:43%;
+		    }
+		    .containerOfSass {
+			    top:70.65%;
+			    margin-left:-28%;
+			    animation:animation27 1000ms linear 9000ms forwards;
+		    }
+		    .imageOfGit {
+			    margin-top:14%;
+			    margin-left:13%;
+		    }
+		    .Git {
+			    top:70.75%;
+			    margin-left:22%;
+		    }
+		    .progressNumberGit {
+			    top:70.75%;
+			    left:37.50%;
+		    }
+		    .progressOfGit {
+			    top:76.75%;
+			    margin-left:40%;
+		    }
+		    .containerOfGit {
+			    top:78.55%;
+			    margin-left:-29.50%;
+			    animation:animation25 1000ms linear 9500ms forwards;
+		    }
+		    .imageOfGithub {
+			    margin-top:9%;
+			    margin-left:13%;
+		    }
+		    .Github {
+			    top:78.25%;
+			    margin-left:19.50%;
+		    } 
+		    .progressNumberGithub {
+			    top:78.25%;
+			    left:45.50%;
+            }
+		    .progressOfGithub {
+		    	top:84.50%;
+		    	margin-left:46.50%;
+		    }
+		    .containerOfGithub {
+			    top:86.26%;
+			    margin-left:-27.50%;
+			    animation:animation28 1000ms linear 10000ms forwards;
+		    }
+		    .imageOfFigma {
+		 	    margin-top:4%;
+			    margin-left:13%;
+		    }
+		    .Figma {
+			    top:86.25%;
+			    margin-left:20%;
+		    }
+		    .progressNumberFigma {
+			    top:86.65%;
+			    left:43.50%;
+		    }
+		    .progressOfFigma {
+		    	top:92.75%;
+		 	    margin-left:46%;
+		    }
+		    .containerOfFigma {
+			    top:94.62%;
+			    margin-left:-27.25%;
+			    animation:animation29 1000ms linear 10500ms forwards;
+		    }
+		    .Todo {
+        	    margin-top:-55%;
+        	    margin-left:10%;
+        	    animation:animation16 1s linear 8000ms forwards;
+            }
+            .Timer {
+        	    margin-top:-45%;
+        	    margin-left:11%;
+        	    animation:animation16 1s linear 7500ms forwards;
+            }
+            .Garlands {
+        	    margin-top:-35%;
+        	    margin-left:11%;
+        	    animation:animation16 1s linear 7000ms forwards;
+            }
+            .Calculator {
+        	    margin-top:-25%;
+        	    margin-left:-26%;
+        	    animation:animation16 1s linear 6500ms forwards;
+            }
+            .Tetris {
+            	margin-top:-15%;
+        	    margin-left:-27%;
+        	    animation:animation16 1s linear 6000ms forwards;
+            }
+	 	    .HexColor {
+	 	    	margin-top:-5%;
+			    margin-left:-26%;
+			    animation:animation16 1s linear 5500ms forwards;
+		    }
+	        .MyTel {
+             	margin-top:0%;
+        	    margin-left:-6%;
+            }
+            .MyGithub {
+            	margin-left:-6%;
+            	left:-40%;
+            	margin-top:-5%;
+            }
+            .MyMail {
+        	    margin-top:-10%;
+        	    margin-left:-6%;
+            }
+            .Thank {
+        	    top:60%;
+        	    left:25%;
+            }
+            .you {
+        	    top:60%;
+        	    left:60%;
+            }
+            .for {
+        	    top:70%;
+        	    left:45%;
+            } 
+            .your {
+        	    top:80%;
+        	    left:25%;
+            }
+            .attention {
+        	    top:80%;
+        	    left:60%;
+            }
+    }
+		@keyframes animation1 {
+			0% {
+				background-image:url("Images/Gor.png");
+				visibility:hidden;
+				position:absolute;
+		        top:108.50%;
+		        left:16.50%;
+			}
+			50% {
+				background-image:url("Images/Gor.png");
+				visibility:visible;
+				position:absolute;
+				top:20.20%;
+				left:19.60%;
+			}
+			60% {
+				background-image:url("Images/Gor2.png");
+				visibility:visible;
+				position:absolute;
+				top:20.20%;
+				left:19.60%;
+			}
+			100% {
+				background-image:url("Images/Gor.png");
+				visibility:visible;
+				position:absolute;
+				top:20.20%;
+				left:19.60%;
+			}
+		}
+			@keyframes animation2 {
+				0% {
+					opacity:0.0;
+				}
+				100% {
+					opacity:1;
+				}
+			}
+			@keyframes animation3 {
+				0% {
+					top:108.50%;
+				}
+				100% {
+					top:25%;
+				}
+			}
+			@keyframes animation4 {
+				0% {
+			        left:109%;
+				}
+				100% {
+			        left:9%;
+				}
+			}
+			@keyframes animation5 {
+				0% {
+                width:0%;
+				}
+				100% {
+			    width:7.50%;
+				}
+			}
+			@keyframes animation6 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:6.92%;
+				}
+			}
+			@keyframes animation7 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:7.24%;
+				}
+			}
+			@keyframes animation8 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:7.2%;
+				}
+			}
+			@keyframes animation9 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:6.68%;
+				}
+			}
+			@keyframes animation10 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:6.45%;
+				}
+			}
+			@keyframes animation11 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:7.14%;
+				}
+			}
+			@keyframes animation12 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:6.80%;
+				}
+			}
+			@keyframes animation13 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:6.40%;
+				}
+			}
+			@keyframes animation14 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:6.70%;
+				}
+			}
+			@keyframes animation15 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:6.68%;
+				}
+			}
+			@keyframes animation16 {
+				0% {
+					top:-20%;
+				}
+				100% {
+					top:76%;
+				}
+			}
+			@keyframes animation17 {
+				0% {
+					left:-40%;
+				}
+				100% {
+					left:10%;
+				}
+			}			
+			@keyframes animation18 {
+				0% {
+					opacity:1.0;
+				}
+				100% {
+					opacity:0.0;
+				}
+			}
+			@keyframes animation19 {
+				0% {
+                width:0%;
+				}
+				100% {
+			    width:15.90%;
+				}
+			}
+			@keyframes animation20 {
+				0% {
+					width:0%;
+			    }
+			    100% {
+			    	width:15.25%;
+			    } 
+			}
+			@keyframes animation21 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:15.70%;
+				}
+			}
+			@keyframes animation22 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:15.50%;
+				}
+			}
+			@keyframes animation23 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:14.75%;
+				}
+			}
+			@keyframes animation24 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:14.40%;
+				}
+			}
+			@keyframes animation25 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:15.50%;
+				}
+			}
+			@keyframes animation26 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:15.70%;
+				}
+			}
+			@keyframes animation27 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:13.70%;
+				}
+			}
+			@keyframes animation28 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:15.50%;
+				}
+			}
+			@keyframes animation29 {
+				0% {
+					width:0%;
+				}
+				100% {
+					width:15.75%;
+				}
+			}
+	</style>
+</head>
+<body>
+	<div id = "LandingShow">
+	</div>
+	<script type = "text/babel">
+        
+		    function Landing1({style}) {
+    return (
+    <div style = {style}>
+    	<div className = "Gor"></div>
+    	<h1 className = "G">G</h1><h1 className = "o">o</h1><h1 className = "r">r</h1>
+    	<p className = "Name">Name: </p>
+    	<p className = "Language">Language: </p>
+    	<p className = "Profession">Profession: </p>
+    	<p className = "Homeland">Homeland: </p>
+    	<p className = "City">City: </p>
+    	<p className = "A">A</p><p className = "i">i</p><p className = "r2">r</p>
+    	<p className = "a">a</p><p className = "p">p</p><p className = "e">e</p>
+    	<p className = "t">t</p><p className = "i2">i</p><p className = "a2">a</p>
+    	<p className = "n">n</p><p className = "G2">G</p><p className = "o2">o</p>
+    	<p className = "r3">r</p><p className = "R">R</p><p className = "a3">a</p>
+    	<p className = "f">f</p><p className = "a4">a</p><p className = "e2">e</p>
+    	<p className = "l">l</p><p className = "o3">o</p><p className = "v">v</p>
+    	<p className = "i3">i</p><p className = "c">c</p><p className = "h">h</p>
+    	<p className = "J">J</p><p className = "a5">a</p><p className = "v2">v</p>
+    	<p className = "a6">a</p><p className = "S">S</p><p className = "c2">c</p>
+    	<p className = "r4">r</p><p className = "i4">i</p><p className = "p2">p</p>
+    	<p className = "t2">t,</p><p className = "P">P</p><p className = "y">y</p>
+    	<p className = "t3">t</p><p className = "h2">h</p><p className = "o4">o</p>
+    	<p className = "n2">n,</p><p className = "P2">P</p><p className = "H">H</p>
+    	<p className = "P3">P</p><p className = "F">F</p><p className = "u">u</p>
+    	<p className = "l2">l</p><p className = "l3">l</p><p className = "S2">S</p>
+    	<p className = "t4">t</p><p className = "a7">a</p><p className = "c3">c</p>
+    	<p className = "k">k</p><p className = "D">D</p><p className = "e3">e</p>
+    	<p className = "v3">v</p><p className = "e4">e</p><p className = "l4">l</p>
+    	<p className = "o5">o</p><p className = "p3">p</p><p className = "e5">e</p>
+    	<p className = "r5">r</p><p className = "A2">A</p><p className = "r6">r</p>
+    	<p className = "m">m</p><p className = "e6">e</p><p className = "n3">n</p>
+    	<p className = "i5">i</p><p className = "a8">a</p><p className = "Y">Y</p>
+    	<p className = "e7">e</p><p className = "r7">r</p><p className = "e8">e</p>
+    	<p className = "v4">v</p><p className = "a9">a</p><p className = "n4">n</p>
+    	<p className = "Click">Click On Content</p>
+    </div>
+    	);
+}
+    function Landing2({style}) {
+    const [progress, setProgress] = React.useState(0);
+    const [progress2, setProgress2] = React.useState(0);
+    const [progress3, setProgress3] = React.useState(0);
+    const [progress4, setProgress4] = React.useState(0);
+    const [progress5, setProgress5] = React.useState(0);
+    const [progress6, setProgress6] = React.useState(0);
+    const [progress7, setProgress7] = React.useState(0);
+    const [progress8, setProgress8] = React.useState(0);
+    const [progress9, setProgress9] = React.useState(0);
+    const [progress10, setProgress10] = React.useState(0);
+    const [progress11, setProgress11] = React.useState(0);
+    const [progress12, setProgress12] = React.useState(0);
+    React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 92 ? 92 : newProgress;
+})
+}, 50), 5000);
+return () => clearInterval(interval);
+}, []);
+    React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress2(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 88 ? 88 : newProgress;
+})
+}, 50), 5500);
+return () => clearInterval(interval);
+}, []);
+    React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress3(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 91 ? 91 : newProgress;
+})
+}, 50), 6000);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress4(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 89 ? 89 : newProgress;
+})
+}, 50), 6500);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress5(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 84 ? 84 : newProgress;
+})
+}, 50), 7000);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress6(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 81 ? 81 : newProgress;
+})
+}, 50), 7500);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress7(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 90 ? 90 : newProgress;
+})
+}, 50), 8000);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress8(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 87 ? 87 : newProgress;
+})
+}, 50), 8500);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress9(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 80 ? 80 : newProgress;
+})
+}, 50), 9000);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress10(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 90 ? 90 : newProgress;
+})
+}, 50), 9500);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress11(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 86 ? 86 : newProgress;
+})
+}, 50), 10000);
+return () => clearInterval(interval);
+}, []);
+React.useEffect(() => {
+    const interval = setTimeout(() => setInterval(() => {
+    setProgress12(prevProgress => {
+    const newProgress = prevProgress + 1;
+    return newProgress > 85 ? 85 : newProgress;
+})
+}, 50), 10500);
+return () => clearInterval(interval);
+}, []);
+    return (
+    <div style = {style}>
+    	<h1 className = "S3">S</h1><h1 className = "k2">k</h1>
+    	<h1 className = "i6">i</h1><h1 className = "l5">l</h1>
+    	<h1 className = "l6">l</h1><h1 className = "s">s</h1>
+        <img src = "Images/HTML.png" className = "imageOfHTML"/><p className = "HTML">HTML</p> 
+        <p className = "progressNumberHTML">{progress}%</p>
+        <div className = "containerOfHTML">
+        </div>
+        <progress value = {progress} max = "100" className = "progressOfHTML"></progress>
+        <img src = "Images/CSS.png" className = "imageOfCSS" /><p className = "CSS">CSS</p><p className = "progressNumberCSS">{progress2}%</p>
+        <div className = "containerOfCSS">
+        </div>
+        <progress value = {progress2} max = "100" className = "progressOfCSS"></progress>
+        <img src = "Images/JavaScript.png" className = "imageOfJavaScript" /><p className = "JavaScript">JavaScript</p><p className = "progressNumberJavaScript">{progress3}%</p>
+        <progress value = {progress3} max = "100" className = "progressOfJavaScript"></progress>
+        <div className = "containerOfJavaScript">
+        </div>
+        <img src = "Images/React.png" className = "imageOfReact" /><p className = "React">React</p><p className = "progressNumberReact">{progress4}%</p>
+        <progress value = {progress4} max = "100" className = "progressOfReact"></progress>
+        <div className = "containerOfReact">
+        </div>
+        <img src = "Images/Redux.png" className = "imageOfRedux" /><p className = "Redux">Redux</p><p className = "progressNumberRedux">{progress5}%</p>
+        <progress value = {progress5} max = "100" className = "progressOfRedux"></progress>
+        <div className = "containerOfRedux">
+        </div>
+        <img src = "Images/BootStrap.png" className = "imageOfBootStrap" /><p className = "BootStrap">BootStrap</p><p className = "progressNumberBootStrap">{progress6}%</p>
+        <progress value = {progress6} max = "100" className = "progressOfBootStrap"></progress>
+        <div className = "containerOfBootStrap">
+        </div>
+        <img src = "Images/PHP.png" className = "imageOfPHP" /><p className = "PHP">PHP</p><p className = "progressNumberPHP">{progress7}%</p>
+        <progress value = {progress7} max = "100" className = "progressOfPHP"></progress>
+        <div className = "containerOfPHP">
+        </div>
+        <img src = "Images/Python.png" className = "imageOfPython" /><p className = "Python">Python</p><p className = "progressNumberPython">{progress8}%</p>
+        <progress value = {progress8} max = "100" className = "progressOfPython"></progress>
+        <div className = "containerOfPython">
+        </div>
+        <img src = "Images/Sass.png" className = "imageOfSass" /><p className = "Sass">Sass</p><p className = "progressNumberSass">{progress9}%</p>
+        <progress value = {progress9} max = "100" className = "progressOfSass"></progress>
+        <div className = "containerOfSass">
+        </div>
+        <img src = "Images/Git.png" className = "imageOfGit" /><p className = "Git">Git</p><p className = "progressNumberGit">{progress10}%</p>
+        <progress value = {progress10} max = "100" className = "progressOfGit"></progress>
+        <div className = "containerOfGit">
+        </div>
+        <img src = "Images/Github.png" className = "imageOfGithub" /><p className = "Github">Github</p><p className = "progressNumberGithub">{progress11}%</p>
+        <progress value = {progress11} max = "100" className = "progressOfGithub"></progress>
+        <div className = "containerOfGithub">
+        </div>
+        <img src = "Images/Figma.png" className = "imageOfFigma" /><p className = "Figma">Figma</p><p className = "progressNumberFigma">{progress12}%</p>
+        <progress value = {progress12} max = "100" className = "progressOfFigma"></progress>
+        <div className = "containerOfFigma">
+        </div>
+        <p className = "Click2">Click On Content</p>
+    </div>
+    );
+}
+    function Landing3({style}) {
+    return (
+    <div style = {style}>
+    	<h1 className = "P4">P</h1><h1 className = "o6">o</h1><h1 className = "r8">r</h1>
+    	<h1 className = "t5">t</h1><h1 className = "f2">f</h1><h1 className = "o7">o</h1>
+    	<h1 className = "l7">l</h1><h1 className = "i7">i</h1><h1 className = "o8">o</h1>
+    	<a href = "Todo List.html" target = "_blank"><p className = "Todo">1 Todo</p></a>
+    	<a href = "Timer.html" target = "_blank"><p className = "Timer">2 Timer</p></a>
+    	<a href = "Garlands.html" target = "_blank"><p className = "Garlands">3 Garlands</p></a>
+    	<a href = "#" target = "_blank"><p className = "Calculator">4 Calculator</p></a>
+    	<a href = "#" target = "_blank"><p className = "Tetris">5 Tetris</p></a>
+    	<a href = "#" target = "_blank"><p className = "HexColor">6 Hex color</p></a>
+    	<p className = "Click3">Click On Content</p>
+    </div>
+    );
+}
+    function Landing4({style}) {
+    return (
+    <div style = {style}>
+    	<h1 className = "C">C</h1><h1 className = "o9">o</h1><h1 className = "n5">n</h1>
+    	<h1 className = "t6">t</h1><h1 className = "a10">a</h1><h1 className = "c4">c</h1>
+    	<h1 className = "t7">t</h1><h1 className = "M">M</h1><h1 className = "e9">e</h1>
+    	<p className = "MyTel">My tel.: </p>
+    	<p className = "MyGithub">My Github: </p>
+    	<p className = "MyMail">My mail: </p>
+    	<a href = "tel:+37498200914"><p className = "plus">+</p><p className = "three">3</p><p className = "seven">7</p>
+    	<p className = "four">4</p><p className = "nine">9</p><p className = "eight">8</p> 
+    	<p className = "two">2</p><p className = "zero">0</p><p className = "zero2">0</p>
+    	<p className = "nine2">9</p><p className = "one">1</p><p className = "four2">4</p></a>
+    	<a href = "https://github.com/Gor2023100" target = "_blank">
+    	<p className = "G3">G</p><p className = "o10">o</p><p className = "r9">r</p>
+    	<p className = "two2">2</p><p className = "zero3">0</p><p className = "two3">2</p>
+    	<p className = "three2">3</p><p className = "one2">1</p><p className = "zero4">0</p>
+    	<p className = "zero5">0</p></a>
+    	<a href = "mailto:gor.hayrapetyan.2005@inbox.ru" type = "email" target = "_blank"><p className = "g">g</p><p className = "o11">o</p><p className = "r10">r</p>
+    	<p className = "point">.</p><p className = "h3">h</p><p className = "a11">a</p>
+    	<p className = "y2">y</p><p className = "r11">r</p><p className = "a12">a</p>
+    	<p className = "p4">p</p><p className = "e10">e</p><p className = "t8">t</p>
+    	<p className = "y3">y</p><p className = "a13">a</p><p className = "n6">n</p>
+    	<p className = "point2">.</p><p className = "two4">2</p><p className = "zero6">0</p>
+    	<p className = "zero7">0</p><p className = "five">5</p><p className = "at">@</p>
+    	<p className = "i8">i</p><p className = "n7">n</p><p className = "b">b</p>
+    	<p className = "o12">o</p><p className = "x">x</p><p className = "point3">.</p>
+    	<p className = "r12">r</p><p className = "u2">u</p></a>
+    	<p className = "Thank">Thank</p> 
+    	<p className = "you">you</p> 
+    	<p className = "for">for</p>
+    	<p className = "your">your</p>
+    	<p className = "attention">attention</p>
+    	<p className = "Click4">Click Content To View Again</p>
+    </div>
+    );
+}
+    function LandingShow() {
+    const [pagesNumber, setPageNumber] = React.useState(1);
+    const newPage = () => {
+    if(pagesNumber <= 7) {
+    setPageNumber(pagesNumber + 1);
+}
+    else {
+    setPageNumber(pagesNumber - 7);
+}
+};
+let landingStyles = {
+    opacity:1.0,
+	animation: "animation18 1s linear forwards"
+	
+   }
+    return (
+    <div onClick = {newPage}>
+    	{pagesNumber >= 1 && <Landing1 style = {pagesNumber >= 2 ? landingStyles : null} />}
+        {pagesNumber >= 2 && <Landing2 style = {pagesNumber >= 3 ? landingStyles : null} />} 
+        {pagesNumber >= 3 && <Landing3 style = {pagesNumber >= 4 ? landingStyles : null} />} 
+        {pagesNumber >= 4 && <Landing4 style = {pagesNumber > 4 ? landingStyles : null} />}  
+        {pagesNumber == 5 && <Landing1 style = {pagesNumber >= 6 ? landingStyles : null}/>}
+        {pagesNumber == 6 && <Landing2 style = {pagesNumber >= 7 ? landingStyles : null} />}
+        {pagesNumber == 7 && <Landing3 style = {pagesNumber >= 8 ? landingStyles : null} />}
+        {pagesNumber == 8 && <Landing4 style = {pagesNumber >= 9 ? landingStyles : null} />}
+    </div>
+    );
+}
+    ReactDOM.render(
+    <LandingShow />,
+    document.getElementById("LandingShow")
+    );
+</script>
+</body>
+</html>
